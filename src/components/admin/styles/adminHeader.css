@@ -1,0 +1,132 @@
+/* Push content below fixed navbar */
+body {
+    padding-top: 80px;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar {
+    height: 80px;
+    background: #0d2248 !important;
+    z-index: 9999;
+}
+
+.navbar .container-fluid {
+    height: 100%;
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff !important;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand svg {
+    font-size: 32px;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-left: 18px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #20c4f4 !important;
+}
+
+/* ===========================
+   View Website Button
+=========================== */
+
+.view-btn {
+    margin-left: 25px;
+
+    width: 170px;
+    height: 48px;
+
+    background: #20c4f4;
+    color: #fff !important;
+
+    border: none;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #16acd8;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Mobile Toggle
+=========================== */
+
+.navbar-toggler {
+    border: 1px solid #20c4f4;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        height: auto;
+        padding: 12px 0;
+    }
+
+    .navbar-collapse {
+        background: #0d2248;
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        margin: 10px 0;
+    }
+
+    .view-btn {
+        width: 100%;
+        margin: 15px 0 0;
+    }
+}

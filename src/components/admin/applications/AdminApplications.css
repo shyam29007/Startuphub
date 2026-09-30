@@ -1,0 +1,424 @@
+/* =====================================================
+   ADMIN APPLICATIONS PAGE
+===================================================== */
+
+.admin-applications-page {
+    width: 100%;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: #0b2a52;
+}
+
+
+/* =====================================================
+   HEADER CARD
+===================================================== */
+
+.admin-applications-header {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 34px 38px;
+    margin-bottom: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 8px 30px rgba(11, 42, 82, 0.06);
+}
+
+.admin-applications-header h2 {
+    margin: 0 0 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: #0b2a52;
+    letter-spacing: -0.3px;
+}
+
+.admin-applications-header p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+
+    color: #58708e;
+}
+
+
+/* =====================================================
+   TOTAL APPLICATIONS
+===================================================== */
+
+.applications-count {
+    background: #18b8df;
+    color: #ffffff;
+
+    padding: 16px 25px;
+    border-radius: 11px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow: 0 8px 20px rgba(24, 184, 223, 0.18);
+}
+
+
+/* =====================================================
+   SEARCH SECTION
+===================================================== */
+
+.applications-search {
+    width: 100%;
+
+    background: #ffffff;
+    border-radius: 18px;
+
+    padding: 20px 26px;
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: center;
+
+    box-shadow: 0 8px 30px rgba(11, 42, 82, 0.05);
+}
+
+.applications-search svg {
+    color: #607895;
+    font-size: 21px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.applications-search input {
+    width: 100%;
+
+    border: 1px solid #d9e2ec;
+    border-radius: 9px;
+
+    padding: 15px 17px;
+
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #0b2a52;
+}
+
+.applications-search input::placeholder {
+    color: #71859d;
+    opacity: 1;
+}
+
+.applications-search input:focus {
+    border-color: #18b8df;
+    box-shadow: 0 0 0 3px rgba(24, 184, 223, 0.10);
+}
+
+
+/* =====================================================
+   TABLE CONTAINER
+===================================================== */
+
+.applications-table-container {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 30px rgba(11, 42, 82, 0.06);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.applications-table thead {
+    background: #0b2a52;
+}
+
+.applications-table th {
+    padding: 20px 20px;
+
+    text-align: left;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.applications-table td {
+    padding: 24px 20px;
+
+    border-bottom: 1px solid #e5ebf1;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #536c88;
+
+    vertical-align: middle;
+}
+
+.applications-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.applications-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.applications-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+
+/* =====================================================
+   SERIAL NUMBER
+===================================================== */
+
+.applications-table td:first-child {
+    color: #536c88;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   DEVELOPER COLUMN
+===================================================== */
+
+.applications-table td strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #0b2a52;
+}
+
+.applications-table td small {
+    display: block;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #66809d;
+}
+
+
+/* =====================================================
+   PROJECT ID / FOUNDER ID
+===================================================== */
+
+.applications-table td:nth-child(3),
+.applications-table td:nth-child(4) {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    color: #58708e;
+}
+
+
+/* =====================================================
+   STATUS BADGE
+===================================================== */
+
+.application-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 9px 18px;
+
+    border-radius: 30px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* Accepted */
+
+.application-status.accepted {
+    background: #dff7eb;
+    color: #138653;
+}
+
+
+/* Pending */
+
+.application-status.pending {
+    background: #fff2d8;
+    color: #c47b00;
+}
+
+
+/* Rejected */
+
+.application-status.rejected {
+    background: #ffe1e4;
+    color: #dc3545;
+}
+
+
+/* Active */
+
+.application-status.active {
+    background: #dff7eb;
+    color: #138653;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-applications {
+    text-align: center !important;
+
+    padding: 55px 20px !important;
+
+    color: #71859d !important;
+}
+
+.empty-applications svg {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #18b8df;
+}
+
+.empty-applications p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #58708e;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.admin-page-loading {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #0b2a52;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .admin-applications-header {
+        padding: 28px;
+    }
+
+    .admin-applications-header h2 {
+        font-size: 26px;
+    }
+
+    .applications-table-container {
+        overflow-x: auto;
+    }
+
+    .applications-table {
+        min-width: 850px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .admin-applications-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .applications-count {
+        align-self: flex-start;
+    }
+
+    .applications-search {
+        padding: 16px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .admin-applications-header {
+        padding: 24px 20px;
+    }
+
+    .admin-applications-header h2 {
+        font-size: 24px;
+    }
+
+    .admin-applications-header p {
+        font-size: 15px;
+    }
+
+    .applications-count {
+        font-size: 15px;
+        padding: 13px 18px;
+    }
+}

@@ -1,0 +1,117 @@
+.admin-projects-page {
+    padding: 10px;
+}
+
+.admin-projects-header {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.admin-projects-header h2 {
+    color: #0d2b57;
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.admin-projects-header p {
+    margin: 0;
+    color: #64748b;
+}
+
+.projects-count {
+    background: #16b8e5;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.projects-search {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.projects-search svg {
+    color: #64748b;
+}
+
+.projects-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.projects-table-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projects-table th {
+    background: #0b2347;
+    color: white;
+    padding: 16px;
+    text-align: left;
+}
+
+.projects-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #475569;
+}
+
+.projects-table td strong {
+    display: block;
+    color: #0d2b57;
+}
+
+.projects-table td small {
+    display: block;
+    margin-top: 5px;
+    color: #64748b;
+}
+
+.project-status {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.empty-projects {
+    text-align: center;
+    padding: 50px !important;
+}
+
+.empty-projects svg {
+    font-size: 40px;
+    color: #94a3b8;
+}
+
+.admin-page-loading {
+    text-align: center;
+    padding: 100px;
+    font-size: 20px;
+    color: #0d2b57;
+}

@@ -1,0 +1,41 @@
+.breadcrumb-banner{
+    height:40vh;
+    background:url("../../assets/hero.png") center center/cover no-repeat;
+    position:relative;
+}
+
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.breadcrumb-banner h1{
+    color:#fff;
+    font-size:55px;
+    font-weight:700;
+    margin-bottom:15px;
+   
+}
+
+.breadcrumb-nav{
+    color:#fff;
+    font-size:18px;
+}
+
+.breadcrumb-nav a{
+    color:#00bfff;
+    text-decoration:none;
+}
+
+.breadcrumb-nav a:hover{
+    color:#fff;
+}
+
+.founder-content{
+    padding-top: 80px;
+}

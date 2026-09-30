@@ -1,0 +1,20 @@
+{
+  "name": "startuphub-server",
+  "version": "1.0.0",
+  "description": "Backend server for StartupHub AI Chatbot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Shyam",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  }
+}
