@@ -1,4 +1,7 @@
-const API_URL = "http://localhost:5000/api/chat";
+const API_BASE_URL =
+    import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL = `${API_BASE_URL.replace(/\/$/, "")}/api/chat`;
 
 class AIService {
     async getResponse(message) {
@@ -21,8 +24,7 @@ class AIService {
 
             if (!response.ok || !data.success) {
                 throw new Error(
-                    data?.message ||
-                    `Server error: ${response.status}`
+                    data?.message || `Server error: ${response.status}`
                 );
             }
 
@@ -35,7 +37,6 @@ class AIService {
             return data.reply;
 
         } catch (error) {
-
             console.error(
                 "StartupHub AI Service Error:",
                 error
