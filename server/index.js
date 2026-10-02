@@ -179,7 +179,7 @@ app.post("/api/chat", async (req, res) => {
         const response =
             await ai.interactions.create({
 
-                model: "gemini-3.8-flash",
+               model: "gemini-2.5-flash-lite",
 
                 input: message.trim(),
 
@@ -188,13 +188,9 @@ app.post("/api/chat", async (req, res) => {
 
                 generation_config: {
 
-                    // Faster chatbot responses
-                    thinking_level: "low",
+                max_output_tokens: 500,
 
-                    // Keep responses short
-                    max_output_tokens: 500,
-
-                },
+            },
 
             });
 
