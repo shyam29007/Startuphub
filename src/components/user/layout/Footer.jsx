@@ -1,158 +1,351 @@
-import {Link} from "react-router-dom"
-export default function Footer(){
-    return(
-        <>
-        <>
-  {/* Footer Start */}
-  <div
-    className="container-fluid bg-dark text-light mt-5 wow fadeInUp"
-    data-wow-delay="0.1s"
-  >
-    <div className="container">
-      <div className="row gx-5">
-        <div className="col-lg-4 col-md-6 footer-about">
-          <div className="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-           <Link to="index.html" className="navbar-brand">
-              <h1 className="m-0 text-white">
-                <i className="fa fa-user-tie me-2" />
-                Startuphub
-              </h1>
+import { Link } from "react-router-dom";
+import {
+  FaRocket,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone,
+  FaArrowRight,
+} from "react-icons/fa";
+
+export default function Footer() {
+  return (
+    <footer
+      style={{
+        background: "#071D49",
+        color: "#FFFFFF",
+        marginTop: "0",
+      }}
+    >
+      {/* =========================
+          MAIN FOOTER
+      ========================== */}
+
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "60px 20px 45px",
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "1.4fr 1fr 1fr",
+            gap: "60px",
+          }}
+        >
+          {/* =========================
+              BRAND
+          ========================== */}
+
+          <div>
+            <Link
+              to="/"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                color: "#FFFFFF",
+                textDecoration: "none",
+                marginBottom: "18px",
+              }}
+            >
+              <FaRocket
+                style={{
+                  color: "#1EC8F3",
+                  fontSize: "34px",
+                }}
+              />
+
+              <span
+                style={{
+                  fontSize: "30px",
+                  fontWeight: 800,
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                StartupHub
+              </span>
             </Link>
-            <p className="mt-3 mb-4">
-             Connect Create Collobrate
-            </p>
-            <form action="">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control border-white p-3"
-                  placeholder="Your Email"
-                />
-                <button className="btn btn-dark">Sign Up</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className="col-lg-8 col-md-6">
-          <div className="row gx-5">
-            <div className="col-lg-4 col-md-12 pt-5 mb-5">
-              <div className="section-title section-title-sm position-relative pb-3 mb-4">
-                <h3 className="text-light mb-0">Get In Touch</h3>
-              </div>
-              <div className="d-flex mb-2">
-                <i className="bi bi-geo-alt text-primary me-2" />
-                <p className="mb-0">India</p>
-              </div>
-              <div className="d-flex mb-2">
-                <i className="bi bi-envelope-open text-primary me-2" />
-                <p className="mb-0">info@example.com</p>
-              </div>
-              <div className="d-flex mb-2">
-                <i className="bi bi-telephone text-primary me-2" />
-                <p className="mb-0">+012 345 67890</p>
-              </div>
-              <div className="d-flex mt-4">
-               <Link className="btn btn-primary btn-square me-2" to="#">
-                  <i className="fab fa-twitter fw-normal" />
-                </Link>
-               <Link className="btn btn-primary btn-square me-2" to="#">
-                  <i className="fab fa-facebook-f fw-normal" />
-                </Link>
-               <Link className="btn btn-primary btn-square me-2" to="#">
-                  <i className="fab fa-linkedin-in fw-normal" />
-                </Link>
-               <Link className="btn btn-primary btn-square" to="#">
-                  <i className="fab fa-instagram fw-normal" />
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-              <div className="section-title section-title-sm position-relative pb-3 mb-4">
-                <h3 className="text-light mb-0">Quick Links</h3>
-              </div>
-              <div className="link-animated d-flex flex-column justify-content-start">
-               <Link className="text-light mb-2" to="#">
-                  <i className="bi bi-arrow-right text-primary me-2" />
-                  Home
-                </Link>
-               <Link className="text-light mb-2" to="#">
-                  <i className="bi bi-arrow-right text-primary me-2" />
-                  About Us
-                </Link>
 
-               <Link className="text-light" to="#">
-                  <i className="bi bi-arrow-right text-primary me-2" />
-                  Contact Us
-                </Link>
-              </div>
+            <p
+              style={{
+                color: "#B8C8DC",
+                fontSize: "15px",
+                lineHeight: "1.8",
+                maxWidth: "390px",
+                margin: "0 0 20px",
+              }}
+            >
+              India's startup collaboration platform
+              connecting founders, developers,
+              designers and innovators to build
+              successful startups together.
+            </p>
+
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                color: "#1EC8F3",
+                fontSize: "13px",
+                fontWeight: 600,
+              }}
+            >
+              <FaRocket />
+              Connect • Create • Collaborate
             </div>
-            <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-              <div className="section-title section-title-sm position-relative pb-3 mb-4">
-                <h3 className="text-light mb-0">Popular Links</h3>
-              </div>
-              <div className="link-animated d-flex flex-column justify-content-start">
-               <Link className="text-light mb-2" to="#">
-                  <i className="bi bi-arrow-right text-primary me-2" />
-                  Home
-                </Link>
-               <Link className="text-light mb-2" to="#">
-                  <i className="bi bi-arrow-right text-primary me-2" />
-                  About Us
-                </Link>
-               
-               <Link className="text-light" to="#">
-                  <i className="bi bi-arrow-right text-primary me-2" />
-                  Contact Us
-                </Link>
-              </div>
-            </div>
+          </div>
+
+          {/* =========================
+              QUICK LINKS
+          ========================== */}
+
+          <div>
+            <h3
+              style={{
+                color: "#FFFFFF",
+                fontSize: "19px",
+                fontWeight: 700,
+                margin: "0 0 22px",
+              }}
+            >
+              Quick Links
+            </h3>
+
+            <FooterLink
+              to="/"
+              text="Home"
+            />
+
+            <FooterLink
+              to="/about"
+              text="About Us"
+            />
+
+            <FooterLink
+              to="/contact"
+              text="Contact Us"
+            />
+
+            <FooterLink
+              to="/marketplace"
+              text="Marketplace"
+            />
+          </div>
+
+          {/* =========================
+              CONTACT
+          ========================== */}
+
+          <div>
+            <h3
+              style={{
+                color: "#FFFFFF",
+                fontSize: "19px",
+                fontWeight: 700,
+                margin: "0 0 22px",
+              }}
+            >
+              Get In Touch
+            </h3>
+
+            <ContactItem
+              icon={<FaMapMarkerAlt />}
+              text="India"
+            />
+
+            <ContactItem
+              icon={<FaEnvelope />}
+              text="hello@startuphub.com"
+            />
+
+            <ContactItem
+              icon={<FaPhone />}
+              text="+91 00000 00000"
+            />
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div className="container-fluid text-white" style={{ background: "#061429" }}>
-    <div className="container text-center">
-      <div className="row justify-content-end">
-        <div className="col-lg-8 col-md-6">
-          <div
-            className="d-flex align-items-center justify-content-center"
-            style={{ height: 75 }}
+
+      {/* =========================
+          BOTTOM BAR
+      ========================== */}
+
+      <div
+        style={{
+          borderTop:
+            "1px solid rgba(255,255,255,0.10)",
+          background: "#061633",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "15px",
+            flexWrap: "wrap",
+          }}
+        >
+          <p
+            style={{
+              margin: 0,
+              color: "#9FB1C8",
+              fontSize: "13px",
+            }}
           >
-            <p className="mb-0">
-              ©{" "}
-             <Link className="text-white border-bottom" to="#">
-                Startuphub 2026
-              </Link>
-              . All Rights Reserved.
-              
-            </p>
-            <br />
-            
-          </div>
+            © 2026{" "}
+            <span
+              style={{
+                color: "#FFFFFF",
+                fontWeight: 700,
+              }}
+            >
+              StartupHub
+            </span>
+            . All Rights Reserved.
+          </p>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#9FB1C8",
+              fontSize: "13px",
+            }}
+          >
+            Built for founders, developers &
+            startup teams
+          </p>
         </div>
       </div>
-    </div>
-  </div>
-  {/* Footer End */}
-  {/* Back to Top */}
- <Link
-    to="#"
-    className="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
-  >
-    <i className="bi bi-arrow-up" />
-  </Link>
-</>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </>
-    )
+      {/* =========================
+          RESPONSIVE
+      ========================== */}
+
+      <style>
+        {`
+          @media (max-width: 768px) {
+            footer > div:first-child {
+              padding: 45px 20px 35px !important;
+            }
+
+            footer > div:first-child > div {
+              grid-template-columns: 1fr !important;
+              gap: 35px !important;
+            }
+
+            footer h3 {
+              margin-bottom: 15px !important;
+            }
+
+            footer > div:last-child > div {
+              justify-content: center !important;
+              text-align: center;
+            }
+          }
+
+          @media (max-width: 480px) {
+            footer > div:first-child {
+              padding: 40px 18px 30px !important;
+            }
+
+            footer span {
+              font-size: inherit;
+            }
+          }
+        `}
+      </style>
+    </footer>
+  );
+}
+
+
+/* =====================================
+   FOOTER LINK
+===================================== */
+
+function FooterLink({ to, text }) {
+  return (
+    <Link
+      to={to}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "9px",
+        color: "#B8C8DC",
+        textDecoration: "none",
+        fontSize: "14px",
+        fontWeight: 500,
+        marginBottom: "14px",
+        transition: "all 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color =
+          "#1EC8F3";
+        e.currentTarget.style.transform =
+          "translateX(4px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color =
+          "#B8C8DC";
+        e.currentTarget.style.transform =
+          "translateX(0)";
+      }}
+    >
+      <FaArrowRight
+        style={{
+          color: "#1EC8F3",
+          fontSize: "11px",
+        }}
+      />
+
+      {text}
+    </Link>
+  );
+}
+
+
+/* =====================================
+   CONTACT ITEM
+===================================== */
+
+function ContactItem({ icon, text }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        marginBottom: "16px",
+        color: "#B8C8DC",
+        fontSize: "14px",
+      }}
+    >
+      <div
+        style={{
+          width: "34px",
+          height: "34px",
+          minWidth: "34px",
+          borderRadius: "9px",
+          background: "rgba(30,200,243,0.12)",
+          color: "#1EC8F3",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "13px",
+        }}
+      >
+        {icon}
+      </div>
+
+      <span>{text}</span>
+    </div>
+  );
 }

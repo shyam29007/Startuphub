@@ -1,104 +1,937 @@
-.hero-section{
-    background:#f8fbff;
-    overflow:hidden;
+/* =========================================================
+   STARTUPHUB HERO
+========================================================= */
+
+:root {
+    --hero-navy: #071D49;
+    --hero-blue: #079FD7;
+    --hero-cyan: #1EC8F3;
+    --hero-purple: #635BFF;
+
+    --hero-bg: #F8FBFF;
+    --hero-text: #071D49;
+    --hero-muted: #52657A;
 }
 
-.hero-badge{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:50px;
-    background:#e8f2ff;
-    color:#1ca4e9;
-    font-weight:600;
-    font-size:14px;
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero-section {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 92% 20%,
+            rgba(30, 200, 243, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 5% 90%,
+            rgba(99, 91, 255, 0.07),
+            transparent 28%
+        ),
+        var(--hero-bg);
+
+    overflow: hidden;
+
+    /* Space below fixed navbar */
+    padding-top: 55px;
+    padding-bottom: 55px;
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 }
 
-.hero-title{
-    font-size:60px;
-    font-weight:800;
-    line-height:1.2;
-    color:#212529;
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
 }
 
-.hero-text{
-    color:#6c757d;
-    font-size:18px;
-    line-height:30px;
-    max-width:520px;
+
+/* =========================================================
+   HERO ROW
+========================================================= */
+
+.hero-row {
+    min-height: 680px;
+
+    align-items: center;
 }
 
-.hero-buttons .btn{
-    border-radius:50px;
-    padding:14px 30px;
-    font-weight:600;
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    padding-top: 5px;
 }
 
-.hero-image{
-    animation:float 4s ease-in-out infinite;
-    max-width:90%;
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero-title {
+    margin-top: 24px;
+    margin-bottom: 22px;
+
+    color: var(--hero-text);
+
+    font-size: clamp(48px, 5vw, 64px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
 }
 
-@keyframes float{
 
-    0%{
-        transform:translateY(0px);
+/* Gradient part */
+
+.hero-gradient-text {
+    background:
+        linear-gradient(
+            135deg,
+            #079FD7 0%,
+            #1EC8F3 45%,
+            #635BFF 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-text {
+    max-width: 610px;
+
+    margin-top: 0;
+
+    color: var(--hero-muted);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+/* =========================================================
+   HERO BADGE
+========================================================= */
+
+.hero-badge {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 11px 22px;
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    /* StartupHub brand colors */
+    background: #EAF9FF !important;
+    border: 2px solid #1EC8F3 !important;
+
+    color: #071D49 !important;
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 22px rgba(7, 29, 73, 0.08),
+        0 0 0 3px rgba(30, 200, 243, 0.06);
+
+    position: relative;
+    z-index: 50;
+}
+
+/* Rocket icon */
+.hero-badge svg {
+    width: 17px;
+    height: 17px;
+
+    color: #079FD7 !important;
+    fill: #079FD7;
+
+    flex-shrink: 0;
+}
+
+/* Hover effect */
+.hero-badge:hover {
+    background: #DDF5FF !important;
+    border-color: #079FD7 !important;
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(7, 159, 215, 0.15);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+
+/* Primary */
+
+.hero-primary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 185px;
+
+    padding: 14px 27px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #079FD7,
+            #1EC8F3
+        );
+
+    color: #fff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 24px rgba(7, 159, 215, 0.22);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.hero-primary-btn:hover {
+    color: #fff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(7, 159, 215, 0.30);
+}
+
+
+/* Secondary */
+
+.hero-secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 205px;
+
+    padding: 13px 26px;
+
+    border: 1.5px solid var(--hero-cyan);
+
+    border-radius: 50px;
+
+    background: #fff;
+
+    color: var(--hero-blue);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+.hero-secondary-btn:hover {
+    background: var(--hero-cyan);
+
+    border-color: var(--hero-cyan);
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* Arrow */
+
+.hero-secondary-btn span {
+    transition: transform .25s ease;
+}
+
+.hero-secondary-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   TRUST LINE
+========================================================= */
+
+.hero-trust {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+
+    color: #718096;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.trust-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #25C46B;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 196, 107, 0.12);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.hero-stats {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.hero-stat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 145px;
+
+    padding: 11px 13px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 1px solid rgba(7, 29, 73, 0.08);
+
+    box-shadow:
+        0 8px 24px rgba(7, 29, 73, 0.07);
+
+    transition: transform .25s ease;
+}
+
+.hero-stat:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Stat Icon */
+
+.stat-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: rgba(30, 200, 243, 0.11);
+
+    color: var(--hero-blue);
+}
+
+
+/* Stat Number */
+
+.hero-stat h3 {
+    margin: 0;
+
+    color: var(--hero-blue);
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+/* Stat Label */
+
+.hero-stat p {
+    margin: 1px 0 0;
+
+    color: #718096;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 560px;
+
+    padding-left: 20px;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.hero-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 610px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+
+.hero-image-card {
+    position: relative;
+
+    padding: 10px;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 25px 60px rgba(7, 29, 73, 0.12);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 20px;
+
+    animation: heroFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.image-glow {
+    position: absolute;
+
+    width: 75%;
+    height: 75%;
+
+    top: 12%;
+    left: 12%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(30, 200, 243, 0.14);
+
+    filter: blur(65px);
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.floating-card {
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 15px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 12px 30px rgba(7, 29, 73, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    animation: floatingCard 4s ease-in-out infinite;
+}
+
+.floating-card strong {
+    display: block;
+
+    color: var(--hero-text);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.floating-card small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #718096;
+
+    font-size: 10px;
+}
+
+
+/* Top card */
+
+.floating-card-top {
+    top: 30px;
+    left: -20px;
+}
+
+
+/* Bottom card */
+
+.floating-card-bottom {
+    right: -15px;
+    bottom: 60px;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================================================
+   FLOATING ICONS
+========================================================= */
+
+.floating-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.floating-icon.purple {
+    background: rgba(99, 91, 255, 0.11);
+
+    color: var(--hero-purple);
+}
+
+.floating-icon.blue {
+    background: rgba(30, 200, 243, 0.12);
+
+    color: var(--hero-blue);
+}
+
+
+/* =========================================================
+   SUCCESS BADGE
+========================================================= */
+
+.success-badge {
+    position: absolute;
+
+    z-index: 11;
+
+    top: -18px;
+    right: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border-radius: 13px;
+
+    background: #fff;
+
+    box-shadow:
+        0 10px 25px rgba(7, 29, 73, 0.10);
+}
+
+.success-check {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #E5F9EE;
+
+    color: #1EBD68;
+
+    font-weight: 800;
+}
+
+.success-badge strong {
+    display: block;
+
+    color: var(--hero-text);
+
+    font-size: 11px;
+}
+
+.success-badge small {
+    display: block;
+
+    color: #718096;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroFloat {
+
+    0% {
+        transform: translateY(0);
     }
 
-    50%{
-        transform:translateY(-15px);
+    50% {
+        transform: translateY(-7px);
     }
 
-    100%{
-        transform:translateY(0px);
+    100% {
+        transform: translateY(0);
     }
 
 }
 
-.hero-stats{
-    display:flex;
-    gap:50px;
+@keyframes floatingCard {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
 }
 
-.hero-stats h3{
-    color:hsl(202, 84%, 49%);
-    font-weight:700;
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .hero-visual {
+        padding-left: 10px;
+    }
+
+    .floating-card-top {
+        left: -5px;
+    }
+
+    .floating-card-bottom {
+        right: -5px;
+    }
+
 }
 
-.hero-stats p{
-    color:#6c757d;
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        padding-top: 30px;
+        padding-bottom: 50px;
+
+        text-align: center;
+    }
+
+    .hero-row {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding-top: 0;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-title {
+        font-size: 44px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-trust {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        min-height: auto;
+
+        padding: 10px 15px;
+    }
+
+    .hero-image-wrapper {
+        max-width: 600px;
+    }
+
+    .floating-card-top {
+        left: 0;
+    }
+
+    .floating-card-bottom {
+        right: 0;
+    }
+
 }
 
-@media(max-width:992px){
 
-.hero-section{
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-    text-align:center;
-}
+@media (max-width: 576px) {
 
-.hero-title{
+    .hero-section {
+        padding-top: 22px;
+        padding-bottom: 40px;
+    }
 
-    font-size:42px;
-}
+    .hero-title {
+        font-size: 36px;
 
-.hero-text{
+        line-height: 1.12;
+    }
 
-    margin:auto;
-}
+    .hero-text {
+        font-size: 15px;
+    }
 
-.hero-stats{
+    .hero-buttons {
+        flex-direction: column;
 
-    justify-content:center;
-    gap:30px;
-}
+        width: 100%;
+    }
 
-.hero-buttons{
+    .hero-primary-btn,
+    .hero-secondary-btn {
+        width: 100%;
 
-    justify-content:center;
-}
+        max-width: 300px;
+    }
 
-.hero-image{
+    .hero-stats {
+        display: grid;
 
-    margin-top:50px;
-}
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 7px;
+    }
+
+    .hero-stat {
+        min-width: 0;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 9px 5px;
+    }
+
+    .stat-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-stat h3 {
+        font-size: 17px;
+    }
+
+    .hero-stat p {
+        font-size: 10px;
+    }
+
+    .floating-card {
+        padding: 8px 10px;
+    }
+
+    .floating-card strong {
+        font-size: 10px;
+    }
+
+    .floating-card small {
+        font-size: 8px;
+    }
+
+    .floating-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .success-badge {
+        display: none;
+    }
 
 }

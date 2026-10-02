@@ -1,0 +1,742 @@
+/* =========================================================
+   STARTUPHUB AI CHATBOT
+   Matches Navbar + Hero UI
+========================================================= */
+
+:root {
+    --sh-navy: #071D49;
+    --sh-cyan: #1EC8F3;
+    --sh-cyan-dark: #18B4DA;
+    --sh-blue: #0B9ED8;
+    --sh-text: #071D49;
+    --sh-muted: #64748B;
+    --sh-light: #F8FBFF;
+    --sh-border: #DCEAF3;
+    --sh-white: #FFFFFF;
+}
+
+
+/* =========================================================
+   FLOATING CHATBOT
+========================================================= */
+
+.startupHubFloatingButton {
+    position: fixed;
+
+    right: 28px;
+    bottom: 28px;
+
+    width: 96px;
+    height: 96px;
+
+    padding: 0;
+
+    border: 2px solid var(--sh-cyan);
+    border-radius: 50%;
+
+    background: var(--sh-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 99999;
+
+    box-shadow:
+        0 10px 30px rgba(7, 29, 73, 0.20),
+        0 0 0 5px rgba(30, 200, 243, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.startupHubFloatingButton:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 14px 36px rgba(7, 29, 73, 0.25),
+        0 0 0 6px rgba(30, 200, 243, 0.12);
+}
+
+
+/* =========================================================
+   INNER CIRCLE
+========================================================= */
+
+.chatbotAvatar {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: var(--sh-navy);
+
+    color: var(--sh-cyan);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+
+    border: 3px solid var(--sh-cyan);
+
+    box-shadow:
+        0 5px 15px rgba(7, 29, 73, 0.25);
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   OUTER RING
+========================================================= */
+
+.chatbotOuterRing {
+    position: absolute;
+
+    inset: 5px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(30, 200, 243, 0.55);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CIRCULAR TEXT
+========================================================= */
+
+.chatbotCircularText {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 4;
+}
+
+
+.chatbotCircleText {
+    fill: var(--sh-navy);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+========================================================= */
+
+.startupHubChatWindow {
+    position: fixed;
+
+    right: 28px;
+    bottom: 28px;
+
+    width: 390px;
+    height: 570px;
+
+    max-width: calc(100vw - 30px);
+    max-height: calc(100vh - 30px);
+
+    background: var(--sh-white);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(7, 29, 73, 0.10);
+
+    box-shadow:
+        0 20px 60px rgba(7, 29, 73, 0.25);
+
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   CHAT HEADER
+========================================================= */
+
+.startupHubChatHeader {
+    min-height: 76px;
+
+    padding: 14px 17px;
+
+    background: var(--sh-navy);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 3px solid var(--sh-cyan);
+}
+
+
+.chatHeaderLeft {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.chatHeaderAvatar {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: var(--sh-cyan);
+
+    color: var(--sh-navy);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.chatHeaderTitle {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #fff;
+}
+
+
+.chatHeaderSubtitle {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: rgba(255, 255, 255, 0.70);
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.chatCloseButton {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.chatCloseButton:hover {
+    background: var(--sh-cyan);
+
+    color: var(--sh-navy);
+
+    border-color: var(--sh-cyan);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.chatStatusBar {
+    height: 34px;
+
+    padding: 0 16px;
+
+    background: #F7FBFD;
+
+    border-bottom: 1px solid var(--sh-border);
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--sh-muted);
+
+    font-size: 11px;
+}
+
+
+.chatOnlineDot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22C55E;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.startupHubMessages {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 18px 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #F8FBFF 0%,
+            #FFFFFF 100%
+        );
+}
+
+
+.startupHubMessages::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.startupHubMessages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.startupHubMessages::-webkit-scrollbar-thumb {
+    background: #BBDCE8;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   MESSAGE ROW
+========================================================= */
+
+.chatMessageRow {
+    display: flex;
+
+    margin-bottom: 14px;
+}
+
+
+.botMessageRow {
+    justify-content: flex-start;
+}
+
+
+.userMessageRow {
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   BOT AVATAR
+========================================================= */
+
+.messageBotAvatar {
+    width: 30px;
+    height: 30px;
+
+    min-width: 30px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: var(--sh-navy);
+
+    color: var(--sh-cyan);
+
+    border: 1px solid var(--sh-cyan);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.chatMessage {
+    max-width: 78%;
+
+    padding: 10px 13px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    white-space: pre-line;
+
+    word-break: break-word;
+}
+
+
+/* BOT MESSAGE */
+
+.botMessage {
+    background: #EDF8FC;
+
+    color: var(--sh-text);
+
+    border:
+        1px solid #DCEEF5;
+
+    border-radius:
+        16px 16px 16px 4px;
+
+    box-shadow:
+        0 2px 7px rgba(7, 29, 73, 0.05);
+}
+
+
+/* USER MESSAGE */
+
+.userMessage {
+    background:
+        linear-gradient(
+            135deg,
+            var(--sh-cyan),
+            var(--sh-blue)
+        );
+
+    color: white;
+
+    border-radius:
+        16px 16px 4px 16px;
+
+    box-shadow:
+        0 5px 14px rgba(30, 200, 243, 0.20);
+}
+
+
+/* =========================================================
+   TYPING
+========================================================= */
+
+.chatTypingBubble {
+    background: #EDF8FC;
+
+    border: 1px solid #DCEEF5;
+
+    border-radius: 16px;
+
+    padding: 10px 13px;
+
+    display: flex;
+
+    gap: 4px;
+
+    align-items: center;
+}
+
+
+.chatTypingDot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--sh-cyan);
+
+    animation:
+        chatTyping 1.2s infinite ease-in-out;
+}
+
+
+.chatTypingDot:nth-child(2) {
+    animation-delay: .2s;
+}
+
+
+.chatTypingDot:nth-child(3) {
+    animation-delay: .4s;
+}
+
+
+@keyframes chatTyping {
+
+    0% {
+        opacity: .3;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+
+    100% {
+        opacity: .3;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.chatInputArea {
+    padding: 12px;
+
+    background: white;
+
+    border-top: 1px solid var(--sh-border);
+}
+
+
+.chatInputWrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        5px 5px 5px 13px;
+
+    background: #F7FAFC;
+
+    border: 1px solid #DDE7EF;
+
+    border-radius: 15px;
+
+    transition: .2s ease;
+}
+
+
+.chatInputWrapper:focus-within {
+    border-color: var(--sh-cyan);
+
+    box-shadow:
+        0 0 0 3px rgba(30, 200, 243, 0.10);
+}
+
+
+.chatInputWrapper input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--sh-text);
+
+    font-size: 13px;
+
+    font-family: inherit;
+}
+
+
+.chatInputWrapper input::placeholder {
+    color: #94A3B8;
+}
+
+
+/* =========================================================
+   SEND
+========================================================= */
+
+.chatSendButton {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: var(--sh-cyan);
+
+    color: var(--sh-navy);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+.chatSendButton:not(:disabled):hover {
+    background: var(--sh-cyan-dark);
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+.chatSendButton:disabled {
+    background: #CBD5E1;
+
+    color: white;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   POWERED BY
+========================================================= */
+
+.chatPoweredText {
+    margin-top: 7px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: #94A3B8;
+
+    font-size: 9px;
+}
+
+
+.chatPoweredText svg {
+    color: var(--sh-cyan);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .startupHubFloatingButton {
+        width: 82px;
+        height: 82px;
+
+        right: 16px;
+        bottom: 16px;
+    }
+
+
+    .chatbotAvatar {
+        width: 49px;
+        height: 49px;
+
+        font-size: 22px;
+    }
+
+
+    .chatbotCircleText {
+        font-size: 7px;
+
+        letter-spacing: .7px;
+    }
+
+
+    .startupHubChatWindow {
+        right: 10px;
+        bottom: 10px;
+
+        width: calc(100vw - 20px);
+
+        height: calc(100vh - 20px);
+
+        max-height: calc(100vh - 20px);
+
+        border-radius: 18px;
+    }
+
+
+    .startupHubChatHeader {
+        min-height: 70px;
+    }
+
+
+    .chatMessage {
+        max-width: 84%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .startupHubFloatingButton {
+        width: 74px;
+        height: 74px;
+
+        right: 12px;
+        bottom: 12px;
+    }
+
+
+    .chatbotAvatar {
+        width: 44px;
+        height: 44px;
+
+        font-size: 20px;
+    }
+
+
+    .chatbotCircleText {
+        font-size: 6px;
+    }
+
+}

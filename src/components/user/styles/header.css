@@ -1,116 +1,383 @@
-body{
-    padding-top:100px;
+/* =========================================================
+   STARTUPHUB USER NAVBAR
+========================================================= */
+
+.user-navbar {
+    background: #071D49;
+    min-height: 92px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .18);
+    z-index: 9999;
 }
 
-/* Same Navbar as Admin */
-.user-navbar{
-    background:#071D49;
-    min-height:92px;
-    box-shadow:0 3px 12px rgba(0,0,0,.18);
-    z-index:9999;
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.user-logo {
+    color: #ffffff !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-/* Logo */
-.user-logo{
-    color:#fff !important;
-    font-size:2.2rem;
-    font-weight:700;
-    text-decoration:none;
+.user-logo svg {
+    color: #1EC8F3;
+    font-size: 2rem;
 }
 
-.user-logo svg{
-    color:#1EC8F3;
-    font-size:2rem;
+
+/* =========================================================
+   DESKTOP MENU
+========================================================= */
+
+.user-navbar .navbar-nav {
+    gap: 18px;
 }
 
-/* Menu */
-.user-navbar .navbar-nav{
-    gap:18px;
+.user-navbar .nav-link {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    padding-bottom: 14px;
+
+    position: relative;
+
+    transition: color .25s ease;
 }
 
-.user-navbar .nav-link{
-    color:#fff !important;
-    font-size:1.2rem;
-    font-weight:500;
-    padding-bottom:14px;
-    position:relative;
+
+/* Desktop active underline */
+
+.user-navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #1EC8F3;
+
+    transition: .3s;
 }
 
-.user-navbar .nav-link::after{
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:0;
-    height:3px;
-    background:#1EC8F3;
-    transition:.3s;
-}
 
 .user-navbar .nav-link:hover,
-.user-navbar .nav-link.active{
-    color:#1EC8F3 !important;
+.user-navbar .nav-link.active {
+    color: #1EC8F3 !important;
 }
+
 
 .user-navbar .nav-link:hover::after,
-.user-navbar .nav-link.active::after{
-    width:100%;
-}
-
-/* Same Button as Admin */
-.user-login-btn{
-    background:#1EC8F3;
-    color:#fff;
-    border-radius:30px;
-    padding:14px 28px;
-    font-size:18px;
-    font-weight:600;
-    min-width:140px;
-    border:none;
-}
-
-.user-login-btn:hover{
-    background:#18b4da;
-    color:#fff;
-}
-
-/* Mobile */
-@media(max-width:991px){
-
-.user-navbar{
-    padding:15px 0;
-}
-
-.user-navbar .navbar-collapse{
-    background:#071D49;
-    margin-top:15px;
-    padding:20px;
-    border-radius:10px;
-}
-
-.user-navbar .navbar-nav{
-    gap:10px;
-}
-
-.user-login-btn{
-    margin-top:15px;
-    width:100%;
-}
+.user-navbar .nav-link.active::after {
+    width: 100%;
 }
 
 
+/* =========================================================
+   LOGIN / REGISTER / LOGOUT - DESKTOP
+========================================================= */
 
-/* Navbar Toggle Button */
-.user-navbar .navbar-toggler{
-    border:2px solid #1EC8F3;
-    padding:8px 10px;
+.user-login-btn {
+    background: #1EC8F3;
+
+    color: #ffffff;
+
+    border-radius: 30px;
+
+    padding: 14px 28px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    min-width: 140px;
+
+    border: none;
+
+    transition: all .25s ease;
 }
 
-.user-navbar .navbar-toggler:focus{
-    box-shadow:none;
+
+.user-login-btn:hover {
+    background: #18b4da;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 18px rgba(30, 200, 243, .18);
 }
 
-/* Make icon white */
-.user-navbar .navbar-toggler-icon{
-    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .user-navbar {
+        padding: 12px 0;
+
+        min-height: 88px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU PANEL
+    ----------------------------------------------------- */
+
+    .user-navbar .navbar-collapse {
+
+        background: #071D49;
+
+        margin-top: 12px;
+
+        padding: 14px 18px 18px;
+
+        border-radius: 14px;
+
+        border: 1px solid rgba(30, 200, 243, .08);
+
+        box-shadow:
+            0 15px 35px rgba(7, 29, 73, .25);
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU LINKS
+    ----------------------------------------------------- */
+
+    .user-navbar .navbar-nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        width: 100%;
+    }
+
+
+    .user-navbar .nav-link {
+
+        display: flex;
+
+        align-items: center;
+
+        min-height: 48px;
+
+        padding: 11px 14px;
+
+        margin: 0;
+
+        border-radius: 9px;
+
+        font-size: 17px;
+
+        font-weight: 600;
+
+        color: #ffffff !important;
+
+        transition:
+            background .25s ease,
+            color .25s ease,
+            transform .2s ease;
+    }
+
+
+    /* Remove desktop underline on mobile */
+
+    .user-navbar .nav-link::after {
+        display: none;
+    }
+
+
+    /* Hover */
+
+    .user-navbar .nav-link:hover {
+
+        background: rgba(30, 200, 243, .08);
+
+        color: #1EC8F3 !important;
+
+        transform: translateX(3px);
+    }
+
+
+    /* Active link */
+
+    .user-navbar .nav-link.active {
+
+        background: rgba(30, 200, 243, .08);
+
+        color: #1EC8F3 !important;
+
+        border-left: 3px solid #1EC8F3;
+
+        padding-left: 11px;
+    }
+
+
+    /* =====================================================
+       MOBILE LOGIN / REGISTER BUTTONS
+    ===================================================== */
+
+    .user-login-btn {
+
+        width: 100%;
+
+        min-height: 48px;
+
+        margin-top: 8px !important;
+
+        padding: 10px 20px;
+
+        border-radius: 12px;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        background: #1EC8F3;
+
+        color: #ffffff;
+
+        border: 1px solid transparent;
+
+        box-shadow: none;
+
+        transition: all .25s ease;
+    }
+
+
+    /* First authentication button */
+
+    .user-navbar .navbar-collapse .user-login-btn:first-of-type {
+
+        margin-top: 14px !important;
+    }
+
+
+    /* Space between Login and Register */
+
+    .user-login-btn + .user-login-btn {
+
+        margin-top: 8px !important;
+    }
+
+
+    /* Button hover */
+
+    .user-login-btn:hover {
+
+        background: #18b4da;
+
+        color: #ffffff;
+
+        transform: translateY(-1px);
+
+        box-shadow:
+            0 6px 15px rgba(30, 200, 243, .18);
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE HAMBURGER
+    ----------------------------------------------------- */
+
+    .user-navbar .navbar-toggler {
+
+        border: 2px solid #1EC8F3;
+
+        padding: 7px 9px;
+
+        border-radius: 5px;
+
+        transition: all .25s ease;
+    }
+
+
+    .user-navbar .navbar-toggler:hover {
+
+        background: rgba(30, 200, 243, .08);
+    }
+
+
+    .user-navbar .navbar-toggler:focus {
+
+        box-shadow:
+            0 0 0 3px rgba(30, 200, 243, .15);
+    }
+
+}
+
+
+/* =========================================================
+   HAMBURGER ICON
+========================================================= */
+
+.user-navbar .navbar-toggler-icon {
+
+    background-image:
+        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .user-logo {
+
+        font-size: 1.9rem;
+    }
+
+
+    .user-logo svg {
+
+        font-size: 1.75rem;
+    }
+
+
+    .user-navbar .navbar-collapse {
+
+        margin-top: 10px;
+
+        padding: 12px 14px 16px;
+
+        border-radius: 12px;
+    }
+
+
+    .user-navbar .nav-link {
+
+        min-height: 46px;
+
+        font-size: 16px;
+
+        padding: 10px 13px;
+    }
+
+
+    .user-login-btn {
+
+        min-height: 46px;
+
+        font-size: 15px;
+
+        border-radius: 11px;
+    }
+
 }

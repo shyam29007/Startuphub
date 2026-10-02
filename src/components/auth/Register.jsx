@@ -26,16 +26,64 @@ export default function Register() {
 
         e.preventDefault();
 
+        /* Phone Regex - 10 digit Indian mobile number */
+        const phoneRegex = /^[6-9]\d{9}$/;
+
+        /* Email Regex */
+        const emailRegex =
+            /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        /* Password Regex
+           Minimum 8 characters
+           At least 1 uppercase
+           At least 1 lowercase
+           At least 1 number
+           At least 1 special character
+        */
+        const passwordRegex =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+
+        /* Phone Validation */
+
+        if (!phoneRegex.test(form.phone)) {
+            toast.error("Please enter a valid 10-digit phone number");
+            return;
+        }
+
+
+        /* Email Validation */
+
+        if (!emailRegex.test(form.email)) {
+            toast.error("Please enter a valid email address");
+            return;
+        }
+
+
+        /* Password Validation */
+
+        if (!passwordRegex.test(form.password)) {
+            toast.error(
+                "Password must contain 8 characters, uppercase, lowercase, number and special character"
+            );
+            return;
+        }
+
+
+        /* Confirm Password */
+
         if (form.password !== form.confirmpassword) {
             toast.error("Passwords do not match");
             return;
         }
+
 
         try {
 
             await UserService.register(form);
 
             toast.success("Registration Successful");
+
             setTimeout(() => {
 
                 navigate("/login");
@@ -108,6 +156,8 @@ export default function Register() {
                                             value={form.phone}
                                             onChange={changeHandler}
                                             required
+                                            pattern="[6-9][0-9]{9}"
+                                            maxLength="10"
                                         />
                                     </div>
 

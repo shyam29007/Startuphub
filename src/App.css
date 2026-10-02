@@ -1,23 +1,93 @@
-body{
-    padding-top:90px;
+/* =========================================================
+   STARTUPHUB GLOBAL THEME
+========================================================= */
+
+:root {
+    /* Main brand */
+    --sh-navy: #071D49;
+    --sh-blue: #079FD7;
+    --sh-cyan: #1EC8F3;
+
+    /* Supporting blue */
+    --sh-blue-dark: #087FB5;
+    --sh-blue-light: #E8F7FD;
+
+    /* Gradient */
+    --sh-gradient: linear-gradient(
+        135deg,
+        #079FD7 0%,
+        #1EC8F3 45%,
+        #4F5BFF 100%
+    );
+
+    /* Backgrounds */
+    --sh-bg: #F8FBFF;
+    --sh-white: #FFFFFF;
+
+    /* Text */
+    --sh-text: #071D49;
+    --sh-text-secondary: #52657A;
+    --sh-text-muted: #718096;
+
+    /* Borders / shadows */
+    --sh-border: rgba(7, 29, 73, 0.10);
+
+    --sh-shadow:
+        0 10px 30px rgba(7, 29, 73, 0.08);
+
+    /* Font */
+    --sh-font:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 }
 
-.navbar{
-    transition:.4s ease;
-    z-index:9999;
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
 }
 
-.navbar-brand{
-    font-weight:700;
-    font-size:30px;
+html {
+    scroll-behavior: smooth;
 }
 
-.nav-link{
-    font-weight:500;
-    margin-left:20px;
+body {
+    margin: 0;
+    padding-top: 90px;
+
+    font-family: var(--sh-font);
+    color: var(--sh-text);
+    background: var(--sh-bg);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR GLOBAL
+========================================================= */
+
+.navbar {
+    transition: 0.4s ease;
+    z-index: 9999;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-left: 20px;
 }
 
 .nav-link:hover,
-.nav-link.active{
-    color:#06A3DA !important;
+.nav-link.active {
+    color: var(--sh-cyan) !important;
 }
