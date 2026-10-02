@@ -159,7 +159,7 @@ export default function Footer() {
 
             <ContactItem
               icon={<FaEnvelope />}
-              text="hello@startuphub.com"
+              text="chaudharysundarm532@gmail.com"
             />
 
             <ContactItem

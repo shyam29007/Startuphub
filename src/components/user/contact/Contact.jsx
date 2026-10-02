@@ -77,8 +77,8 @@ export default function Contact() {
 
               <p>Send us your query</p>
 
-              <a href="mailto:hello@startuphub.com">
-                hello@startuphub.com
+              <a href="mailto:chaudharysundarm532@gmail.com">
+                chaudharysundarm532@gmail.com
               </a>
             </div>
 
