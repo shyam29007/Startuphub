@@ -35,9 +35,9 @@ import EditCategory from "./components/admin/category/EditCategory";
 
 /* ================= USERS ================= */
 
-import ManageUsers from "./components/admin/Users/ManageUsers";
-import ViewUser from "./components/admin/Users/ViewUser";
-import EditUser from "./components/admin/Users/EditUser";
+import ManageUsers from "./components/admin/users/ManageUsers";
+import ViewUser from "./components/admin/users/ViewUser";
+import EditUser from "./components/admin/users/EditUser";
 
 import AdminStartups from "./components/admin/startups/AdminStartups";
 import AdminProjects from "./components/admin/projects/AdminProjects";
