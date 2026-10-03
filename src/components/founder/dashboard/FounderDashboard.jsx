@@ -15,6 +15,8 @@ import {
 import AuthService from "../../../services/AuthService";
 import ProjectService from "../../../services/ProjectService";
 import ApplicationService from "../../../services/ApplicationService";
+import BusinessService from "../../../services/BusinessService";
+
 
 import "./FounderDashboard.css";
 
@@ -27,6 +29,8 @@ export default function FounderDashboard() {
     const [applications, setApplications] = useState([]);
 
     const [loading, setLoading] = useState(true);
+
+    const [business, setBusiness] = useState(null);
 
     useEffect(() => {
 
@@ -50,8 +54,16 @@ export default function FounderDashboard() {
                     user.uid
                 );
 
+            const businessData =
+                await BusinessService.getBusinessByFounder(
+                    user.uid
+                );    
+
+                
+
             setProjects(projectData || []);
             setApplications(applicationData || []);
+            setBusiness(businessData || null);
 
         } catch (error) {
 
@@ -209,7 +221,7 @@ export default function FounderDashboard() {
                         </span>
 
                         <h2>
-                            1
+                             {business ? 1 : 0}
                         </h2>
 
                     </div>

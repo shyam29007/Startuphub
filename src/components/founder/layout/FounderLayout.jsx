@@ -3,6 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import AuthService from "../../../services/AuthService";
 
 import FounderHeader from "./FounderHeader";
+import "./FounderLayout.css";
 
 export default function FounderLayout() {
 
@@ -47,13 +48,15 @@ export default function FounderLayout() {
 
     return (
 
-        <>
+        <div className="founder-layout">
 
             <FounderHeader />
 
-            <Outlet />
+            <main className="founder-main">
+                <Outlet />
+            </main>
 
-        </>
+        </div>
 
     );
 

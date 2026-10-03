@@ -24,19 +24,19 @@ export default function Footer() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          padding: "60px 20px 45px",
+          padding: "35px 20px 30px",
         }}
       >
         <div
           style={{
             display: "grid",
-            gridTemplateColumns:
-              "1.4fr 1fr 1fr",
-            gap: "60px",
+            gridTemplateColumns: "1.5fr 1fr 1fr",
+            gap: "45px",
+            alignItems: "start",
           }}
         >
           {/* =========================
-              BRAND
+              STARTUPHUB
           ========================== */}
 
           <div>
@@ -45,22 +45,22 @@ export default function Footer() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "10px",
+                gap: "9px",
                 color: "#FFFFFF",
                 textDecoration: "none",
-                marginBottom: "18px",
+                marginBottom: "12px",
               }}
             >
               <FaRocket
                 style={{
                   color: "#1EC8F3",
-                  fontSize: "34px",
+                  fontSize: "28px",
                 }}
               />
 
               <span
                 style={{
-                  fontSize: "30px",
+                  fontSize: "26px",
                   fontWeight: 800,
                   letterSpacing: "-0.5px",
                 }}
@@ -72,31 +72,16 @@ export default function Footer() {
             <p
               style={{
                 color: "#B8C8DC",
-                fontSize: "15px",
-                lineHeight: "1.8",
+                fontSize: "14px",
+                lineHeight: "1.65",
                 maxWidth: "390px",
-                margin: "0 0 20px",
+                margin: 0,
               }}
             >
-              India's startup collaboration platform
-              connecting founders, developers,
-              designers and innovators to build
+              India's startup collaboration platform connecting
+              founders, developers and innovators to build
               successful startups together.
             </p>
-
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                color: "#1EC8F3",
-                fontSize: "13px",
-                fontWeight: 600,
-              }}
-            >
-              <FaRocket />
-              Connect • Create • Collaborate
-            </div>
           </div>
 
           {/* =========================
@@ -107,9 +92,9 @@ export default function Footer() {
             <h3
               style={{
                 color: "#FFFFFF",
-                fontSize: "19px",
+                fontSize: "18px",
                 fontWeight: 700,
-                margin: "0 0 22px",
+                margin: "0 0 16px",
               }}
             >
               Quick Links
@@ -126,13 +111,13 @@ export default function Footer() {
             />
 
             <FooterLink
-              to="/contact"
-              text="Contact Us"
+              to="/marketplace"
+              text="Marketplace"
             />
 
             <FooterLink
-              to="/marketplace"
-              text="Marketplace"
+              to="/contact"
+              text="Contact Us"
             />
           </div>
 
@@ -144,9 +129,9 @@ export default function Footer() {
             <h3
               style={{
                 color: "#FFFFFF",
-                fontSize: "19px",
+                fontSize: "18px",
                 fontWeight: 700,
-                margin: "0 0 22px",
+                margin: "0 0 16px",
               }}
             >
               Get In Touch
@@ -171,13 +156,12 @@ export default function Footer() {
       </div>
 
       {/* =========================
-          BOTTOM BAR
+          COPYRIGHT
       ========================== */}
 
       <div
         style={{
-          borderTop:
-            "1px solid rgba(255,255,255,0.10)",
+          borderTop: "1px solid rgba(255,255,255,0.10)",
           background: "#061633",
         }}
       >
@@ -185,12 +169,8 @@ export default function Footer() {
           style={{
             maxWidth: "1200px",
             margin: "0 auto",
-            padding: "20px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "15px",
-            flexWrap: "wrap",
+            padding: "13px 20px",
+            textAlign: "center",
           }}
         >
           <p
@@ -208,19 +188,8 @@ export default function Footer() {
               }}
             >
               StartupHub
-            </span>
+            </span>{" "}
             . All Rights Reserved.
-          </p>
-
-          <p
-            style={{
-              margin: 0,
-              color: "#9FB1C8",
-              fontSize: "13px",
-            }}
-          >
-            Built for founders, developers &
-            startup teams
           </p>
         </div>
       </div>
@@ -232,33 +201,36 @@ export default function Footer() {
       <style>
         {`
           @media (max-width: 768px) {
+
             footer > div:first-child {
-              padding: 45px 20px 35px !important;
+              padding: 30px 20px 25px !important;
             }
 
             footer > div:first-child > div {
               grid-template-columns: 1fr !important;
-              gap: 35px !important;
+              gap: 25px !important;
             }
 
             footer h3 {
-              margin-bottom: 15px !important;
+              margin-bottom: 13px !important;
             }
 
-            footer > div:last-child > div {
-              justify-content: center !important;
-              text-align: center;
-            }
           }
 
           @media (max-width: 480px) {
+
             footer > div:first-child {
-              padding: 40px 18px 30px !important;
+              padding: 28px 18px 22px !important;
+            }
+
+            footer > div:first-child > div {
+              gap: 22px !important;
             }
 
             footer span {
               font-size: inherit;
             }
+
           }
         `}
       </style>
@@ -278,31 +250,27 @@ function FooterLink({ to, text }) {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "9px",
+        gap: "8px",
         color: "#B8C8DC",
         textDecoration: "none",
         fontSize: "14px",
         fontWeight: 500,
-        marginBottom: "14px",
+        marginBottom: "10px",
         transition: "all 0.2s ease",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.color =
-          "#1EC8F3";
-        e.currentTarget.style.transform =
-          "translateX(4px)";
+        e.currentTarget.style.color = "#1EC8F3";
+        e.currentTarget.style.transform = "translateX(4px)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.color =
-          "#B8C8DC";
-        e.currentTarget.style.transform =
-          "translateX(0)";
+        e.currentTarget.style.color = "#B8C8DC";
+        e.currentTarget.style.transform = "translateX(0)";
       }}
     >
       <FaArrowRight
         style={{
           color: "#1EC8F3",
-          fontSize: "11px",
+          fontSize: "10px",
         }}
       />
 
@@ -322,30 +290,36 @@ function ContactItem({ icon, text }) {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: "12px",
-        marginBottom: "16px",
+        gap: "10px",
+        marginBottom: "11px",
         color: "#B8C8DC",
         fontSize: "14px",
       }}
     >
       <div
         style={{
-          width: "34px",
-          height: "34px",
-          minWidth: "34px",
-          borderRadius: "9px",
+          width: "32px",
+          height: "32px",
+          minWidth: "32px",
+          borderRadius: "8px",
           background: "rgba(30,200,243,0.12)",
           color: "#1EC8F3",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "13px",
+          fontSize: "12px",
         }}
       >
         {icon}
       </div>
 
-      <span>{text}</span>
+      <span
+        style={{
+          wordBreak: "break-word",
+        }}
+      >
+        {text}
+      </span>
     </div>
   );
 }

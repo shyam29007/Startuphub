@@ -1,81 +1,108 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import AuthService from "../../../services/AuthService";
-import { FaRocket } from "react-icons/fa";
+import { FaRocket, FaBars, FaTimes, FaSignOutAlt } from "react-icons/fa";
+import "./FounderHeader.css";
 
 export default function FounderHeader() {
-
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const closeMenu = () => setMenuOpen(false);
 
     async function logout() {
-
-        await AuthService.logout();
-        navigate("/login");
+        try {
+            await AuthService.logout();
+            closeMenu();
+            navigate("/login");
+        } catch (error) {
+            console.error("Founder logout error:", error);
+        }
     }
 
     return (
-
-        <nav className="navbar navbar-expand-lg user-navbar fixed-top">
-
-            <div className="container-fluid">
-
-                <NavLink
-                    to="/founder"
-                    className="navbar-brand user-logo"
-                >
-                    <FaRocket className="me-2" />
-                    StartupHub Founder
-                </NavLink>
-
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#founderNavbar"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div
-                    className="collapse navbar-collapse"
-                    id="founderNavbar"
-                >
-                    <div className="navbar-nav mx-auto">
-
-                        <NavLink
-                            to="/founder"
-                            end
-                            className="nav-link"
-                        >
-                            Dashboard
-                        </NavLink>
-
-                        <NavLink
-                            to="/founder/business"
-                            className="nav-link"
-                        >
-                            Business
-                        </NavLink>
-
-                        <NavLink
-                            to="/founder/projects"
-                            className="nav-link"
-                        >
-                            Projects
-                        </NavLink>
-
-                    </div>
+        <header className="founder-header">
+            <nav className="founder-navbar">
+                <div className="founder-navbar-inner">
+                    <NavLink
+                        to="/founder"
+                        end
+                        className="founder-brand"
+                        onClick={closeMenu}
+                    >
+                        <span className="founder-brand-icon">
+                            <FaRocket />
+                        </span>
+                        <span>StartupHub Founder</span>
+                    </NavLink>
 
                     <button
-                        className="btn user-login-btn"
-                        onClick={logout}
+                        type="button"
+                        className="founder-menu-toggle"
+                        onClick={() => setMenuOpen((open) => !open)}
+                        aria-expanded={menuOpen}
+                        aria-label="Toggle founder navigation"
                     >
-                        Logout
+                        {menuOpen ? <FaTimes /> : <FaBars />}
                     </button>
+
+                    <div
+                        className={`founder-nav-content ${menuOpen ? "show" : ""}`}
+                    >
+                        <div className="founder-nav-links">
+                            <NavLink
+                                to="/founder"
+                                end
+                                onClick={closeMenu}
+                                className={({ isActive }) =>
+                                    `founder-nav-link ${isActive ? "active" : ""}`
+                                }
+                            >
+                                Dashboard
+                            </NavLink>
+
+                            <NavLink
+                                to="/founder/business"
+                                onClick={closeMenu}
+                                className={({ isActive }) =>
+                                    `founder-nav-link ${isActive ? "active" : ""}`
+                                }
+                            >
+                                Business
+                            </NavLink>
+
+                            <NavLink
+                                to="/founder/projects"
+                                onClick={closeMenu}
+                                className={({ isActive }) =>
+                                    `founder-nav-link ${isActive ? "active" : ""}`
+                                }
+                            >
+                                Projects
+                            </NavLink>
+
+                            <NavLink
+                                to="/founder/applications"
+                                onClick={closeMenu}
+                                className={({ isActive }) =>
+                                    `founder-nav-link ${isActive ? "active" : ""}`
+                                }
+                            >
+                                Applications
+                            </NavLink>
+                        </div>
+
+                        <button
+                            type="button"
+                            className="founder-logout-btn"
+                            onClick={logout}
+                        >
+                            <FaSignOutAlt />
+                            <span>Logout</span>
+                        </button>
+                    </div>
                 </div>
-
-            </div>
-
-        </nav>
-
+            </nav>
+        </header>
     );
 }

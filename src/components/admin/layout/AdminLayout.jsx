@@ -1,19 +1,15 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 import AuthService from "../../../services/AuthService";
 
 import AdminHeader from "./AdminHeader";
-import AdminBreadcrumb from "./AdminBreadcrumb";
 
 export default function AdminLayout() {
 
     const user = AuthService.getUser();
 
-    const { pathname } = useLocation();
-
-
     // ==========================
-    // Check Login
+    // CHECK LOGIN
     // ==========================
 
     if (!user) {
@@ -29,7 +25,7 @@ export default function AdminLayout() {
 
 
     // ==========================
-    // Check Admin Role
+    // CHECK ADMIN ROLE
     // ==========================
 
     if (user.role !== "admin") {
@@ -45,7 +41,7 @@ export default function AdminLayout() {
 
 
     // ==========================
-    // Admin Layout
+    // ADMIN LAYOUT
     // ==========================
 
     return (
@@ -54,22 +50,11 @@ export default function AdminLayout() {
 
             <AdminHeader />
 
-
-            {/* 
-                Hide breadcrumb only on Admin Dashboard.
-                Other admin pages will still show it.
-            */}
-
-            {pathname !== "/admin" && (
-                <AdminBreadcrumb />
-            )}
-
-
-            <div className="container-fluid py-5">
+            <main className="admin-main-content">
 
                 <Outlet />
 
-            </div>
+            </main>
 
         </>
 

@@ -7,13 +7,10 @@ import "../styles/header.css";
 export default function Header() {
 
     const navigate = useNavigate();
-
     const user = AuthService.getUser();
 
-    // Mobile menu state
     const [menuOpen, setMenuOpen] = useState(false);
 
-    // Close mobile menu
     const closeMenu = () => {
         setMenuOpen(false);
     };
@@ -25,6 +22,7 @@ export default function Header() {
             await AuthService.logout();
 
             closeMenu();
+
             navigate("/");
 
         } catch (error) {
@@ -37,45 +35,61 @@ export default function Header() {
 
     return (
 
-        <header>
+        <header className="user-header">
 
-            <nav className="navbar navbar-expand-lg user-navbar fixed-top">
+            <nav className="navbar navbar-expand-lg user-navbar">
 
-                <div className="container-fluid px-4">
+                <div className="container-fluid user-navbar-container">
 
-                    {/* Logo */}
+                    {/* =========================================
+                        LOGO
+                    ========================================= */}
+
                     <NavLink
                         to="/"
                         className="navbar-brand user-logo"
                         onClick={closeMenu}
                     >
-                        <FaRocket className="me-2" />
-                        StartupHub
+
+                        <FaRocket />
+
+                        <span>StartupHub</span>
+
                     </NavLink>
 
 
-                    {/* Mobile Toggle */}
+                    {/* =========================================
+                        MOBILE TOGGLE
+                    ========================================= */}
+
                     <button
-                        className="navbar-toggler"
+                        className="navbar-toggler user-navbar-toggler"
                         type="button"
                         onClick={() => setMenuOpen(!menuOpen)}
                         aria-expanded={menuOpen}
                         aria-label="Toggle navigation"
                     >
+
                         <span className="navbar-toggler-icon"></span>
+
                     </button>
 
 
-                    {/* Navigation Menu */}
+                    {/* =========================================
+                        NAVIGATION
+                    ========================================= */}
+
                     <div
-                        className={`collapse navbar-collapse ${
-                            menuOpen ? "show" : ""
-                        }`}
-                        id="navbarCollapse"
+                        className={
+                            `collapse navbar-collapse ${
+                                menuOpen ? "show" : ""
+                            }`
+                        }
                     >
 
-                        {/* Center Menu */}
-                        <div className="navbar-nav mx-auto">
+                        {/* CENTER MENU */}
+
+                        <div className="navbar-nav user-nav-menu">
 
                             <NavLink
                                 to="/"
@@ -132,13 +146,17 @@ export default function Header() {
                         </div>
 
 
-                        {/* Authentication Buttons */}
+                        {/* =========================================
+                            AUTH BUTTONS
+                        ========================================= */}
 
-                        {
-                            user ? (
+                        <div className="user-auth-buttons">
+
+                            {user ? (
 
                                 <button
-                                    className="btn user-login-btn ms-2"
+                                    type="button"
+                                    className="user-auth-btn"
                                     onClick={handleLogout}
                                 >
                                     Logout
@@ -151,7 +169,7 @@ export default function Header() {
                                     <NavLink
                                         to="/login"
                                         onClick={closeMenu}
-                                        className="btn user-login-btn me-2"
+                                        className="user-auth-btn"
                                     >
                                         Login
                                     </NavLink>
@@ -160,15 +178,16 @@ export default function Header() {
                                     <NavLink
                                         to="/register"
                                         onClick={closeMenu}
-                                        className="btn user-login-btn"
+                                        className="user-auth-btn"
                                     >
                                         Register
                                     </NavLink>
 
                                 </>
 
-                            )
-                        }
+                            )}
+
+                        </div>
 
                     </div>
 
@@ -177,5 +196,6 @@ export default function Header() {
             </nav>
 
         </header>
+
     );
 }

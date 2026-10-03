@@ -1,16 +1,26 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaRocket } from "react-icons/fa";
 import "../styles/adminHeader.css";
 
-
 export default function AdminHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
         <div className="container-fluid px-4">
 
           {/* Logo */}
-          <NavLink to="/admin" className="navbar-brand fw-bold">
+          <NavLink
+            to="/admin"
+            className="navbar-brand fw-bold"
+            onClick={closeMenu}
+          >
             <FaRocket className="me-2 text-info" />
             StartupHub Admin
           </NavLink>
@@ -19,17 +29,21 @@ export default function AdminHeader() {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#adminNavbar"
+            onClick={() => setMenuOpen(!menuOpen)}
             aria-controls="adminNavbar"
-            aria-expanded="false"
+            aria-expanded={menuOpen}
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           {/* Navbar Links */}
-          <div className="collapse navbar-collapse" id="adminNavbar">
+          <div
+            className={`collapse navbar-collapse ${
+              menuOpen ? "show" : ""
+            }`}
+            id="adminNavbar"
+          >
             <div className="navbar-nav ms-auto">
 
               <NavLink
@@ -38,6 +52,7 @@ export default function AdminHeader() {
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
+                onClick={closeMenu}
               >
                 Dashboard
               </NavLink>
@@ -48,6 +63,7 @@ export default function AdminHeader() {
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
+                onClick={closeMenu}
               >
                 Category
               </NavLink>
@@ -57,6 +73,7 @@ export default function AdminHeader() {
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
+                onClick={closeMenu}
               >
                 Startups
               </NavLink>
@@ -66,22 +83,23 @@ export default function AdminHeader() {
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
+                onClick={closeMenu}
               >
                 Users
               </NavLink>
 
-             
-
               <NavLink
                 to="/"
                 className="view-btn"
+                onClick={closeMenu}
               >
                 View Website
               </NavLink>
 
               <NavLink
                 to="/login"
-                className="view-btn"
+                className="view-btn logout-btn"
+                onClick={closeMenu}
               >
                 Logout
               </NavLink>

@@ -42,7 +42,10 @@ class BusinessService {
 
                 logo: data.logo,
 
-                status: true,
+                // IMPORTANT:
+                // Every newly created business
+                // must wait for Admin approval.
+                status: "pending",
 
                 createdAt: serverTimestamp(),
 
@@ -55,10 +58,13 @@ class BusinessService {
                 business
             );
 
-            // Return the Firestore document ID
+            // Return Firestore document ID
             return {
+
                 id: docRef.id,
+
                 ...business
+
             };
 
         }
@@ -101,15 +107,6 @@ class BusinessService {
             }
 
             const docItem = snapshot.docs[0];
-
-            /*
-             IMPORTANT:
-             Put ...docItem.data() FIRST
-             and id LAST.
-
-             This guarantees that the
-             Firestore document ID is used.
-            */
 
             return {
 
@@ -189,7 +186,9 @@ class BusinessService {
             );
 
             await updateDoc(
+
                 businessRef,
+
                 {
 
                     businessName:
@@ -207,13 +206,13 @@ class BusinessService {
                     logo:
                         data.logo,
 
-                    status:
-                        data.status ?? true,
-
+                    // DO NOT allow Founder
+                    // to change approval status.
                     updatedAt:
                         serverTimestamp()
 
                 }
+
             );
 
         }
@@ -236,11 +235,13 @@ class BusinessService {
         try {
 
             await deleteDoc(
+
                 doc(
                     db,
                     COLLECTION_NAME,
                     id
                 )
+
             );
 
         }

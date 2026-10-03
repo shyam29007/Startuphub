@@ -1,0 +1,29 @@
+.founder-layout {
+    min-height: 100vh;
+    background: #f5f9fd;
+    color: #102a56;
+    font-family: var(--sh-font, "Poppins", "Segoe UI", Arial, sans-serif);
+}
+
+.founder-main {
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    padding: 96px 28px 35px;
+    background:
+        radial-gradient(circle at 95% 5%, rgba(30, 200, 243, 0.08), transparent 23%),
+        radial-gradient(circle at 5% 75%, rgba(99, 91, 255, 0.045), transparent 25%),
+        #f5f9fd;
+}
+
+@media (max-width: 900px) {
+    .founder-main {
+        padding: 92px 20px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .founder-main {
+        min-height: calc(100vh - 68px);
+        padding: 84px 14px 25px;
+    }
+}

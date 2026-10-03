@@ -1,28 +1,46 @@
-/* =========================================
-   STARTUPS PAGE
-========================================= */
+/* =========================================================
+   ADMIN STARTUPS
+========================================================= */
 
 .startups-page {
     width: 100%;
-    padding: 10px;
+    min-width: 0;
+
+    padding: 25px 30px 30px;
+
+    margin: 0;
+
+    font-family: var(--sh-font);
+
+    box-sizing: border-box;
+}
+
+.startups-page *,
+.startups-page *::before,
+.startups-page *::after {
+    box-sizing: border-box;
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* =========================================================
+   PAGE HEADER
+========================================================= */
 
 .startups-header {
     background: #ffffff;
+
     padding: 25px 30px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-radius: 8px;
+    gap: 20px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
 
     margin-bottom: 20px;
 }
@@ -38,122 +56,352 @@
 }
 
 .startups-header p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
 
     color: #6c757d;
 
-    font-size: 16px;
+    font-size: 15px;
+
+    line-height: 1.5;
 }
 
 .startup-count {
+    flex-shrink: 0;
+
     background: #18b9e8;
 
-    color: white;
+    color: #ffffff;
 
-    padding: 12px 20px;
+    padding: 11px 18px;
 
-    border-radius: 6px;
+    border-radius: 8px;
+
+    font-size: 14px;
 
     font-weight: 600;
 }
 
 
-/* =========================================
-   SEARCH
-========================================= */
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
 
-.startups-search {
-    background: white;
+.startup-summary {
+    display: grid;
 
-    padding: 15px 20px;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
 
-    border-radius: 8px;
+    gap: 14px;
 
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+}
 
+
+.startup-summary-card {
     display: flex;
 
     align-items: center;
 
     gap: 12px;
 
+    width: 100%;
+
+    padding: 17px;
+
+    border:
+        1px solid #e7edf5;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #0b2a52;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.startup-summary-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.08);
+}
+
+.startup-summary-card.active {
+    border-color: #18b9e8;
+
+    box-shadow:
+        0 0 0 2px rgba(24, 185, 232, 0.10);
+}
+
+
+.summary-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+}
+
+
+.startup-summary-card.total
+.summary-icon {
+    background: #e7f7fc;
+
+    color: #0ea7d5;
+}
+
+.startup-summary-card.pending
+.summary-icon {
+    background: #fff4dc;
+
+    color: #e7a400;
+}
+
+.startup-summary-card.approved
+.summary-icon {
+    background: #e5f8ef;
+
+    color: #13a86b;
+}
+
+.startup-summary-card.rejected
+.summary-icon {
+    background: #ffe8e8;
+
+    color: #e34d4d;
+}
+
+.startup-summary-card.suspended
+.summary-icon {
+    background: #eeeef1;
+
+    color: #63666d;
+}
+
+
+.startup-summary-card span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #718096;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+.startup-summary-card strong {
+    display: block;
+
+    color: #0b2a52;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.startups-toolbar {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
     margin-bottom: 20px;
 }
 
-.startups-search svg {
-    color: #6c757d;
 
-    font-size: 18px;
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.startups-search {
+    flex: 1;
+
+    min-width: 0;
+
+    background: #ffffff;
+
+    padding:
+        13px 18px;
+
+    border-radius: 9px;
+
+    border:
+        1px solid #e7edf5;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.startups-search svg {
+    flex-shrink: 0;
+
+    color: #7b8794;
+
+    font-size: 17px;
 }
 
 .startups-search input {
     width: 100%;
 
+    min-width: 0;
+
     border: none;
 
     outline: none;
 
-    font-size: 16px;
+    background: transparent;
 
     color: #333;
+
+    font-size: 14px;
 }
 
 .startups-search input::placeholder {
-    color: #999;
+    color: #9aa3ad;
 }
 
 
-/* =========================================
+/* =========================================================
+   STATUS FILTER
+========================================================= */
+
+.startup-status-filter {
+    width: 190px;
+
+    height: 47px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid #dfe6ee;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #34495e;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.startup-status-filter:focus {
+    border-color: #18b9e8;
+
+    box-shadow:
+        0 0 0 3px rgba(24, 185, 232, 0.10);
+}
+
+
+/* =========================================================
    TABLE CONTAINER
-========================================= */
+========================================================= */
 
 .startups-table-container {
-    background: white;
+    width: 100%;
 
-    border-radius: 8px;
+    background: #ffffff;
+
+    border-radius: 12px;
 
     overflow-x: auto;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
 }
 
 
-/* =========================================
+/* =========================================================
    TABLE
-========================================= */
+========================================================= */
 
 .startups-table {
     width: 100%;
 
-    border-collapse: collapse;
+    min-width: 1150px;
 
-    min-width: 900px;
+    border-collapse: collapse;
 }
 
 .startups-table thead {
     background: #09264d;
 
-    color: white;
+    color: #ffffff;
 }
 
 .startups-table th {
-    padding: 16px;
+    padding: 15px;
 
     text-align: left;
 
-    font-size: 15px;
+    font-size: 13px;
 
     font-weight: 700;
+
+    white-space: nowrap;
 }
 
 .startups-table td {
-    padding: 16px;
+    padding: 14px 15px;
 
-    border-bottom: 1px solid #eeeeee;
+    border-bottom:
+        1px solid #edf0f4;
 
     color: #555;
 
     vertical-align: middle;
+
+    font-size: 13px;
+}
+
+.startups-table tbody tr {
+    transition:
+        background .2s ease;
 }
 
 .startups-table tbody tr:hover {
@@ -161,21 +409,25 @@
 }
 
 
-/* =========================================
+/* =========================================================
    STARTUP NAME
-========================================= */
+========================================================= */
 
 .startup-name {
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
+
+    min-width: 190px;
 }
 
 .startup-icon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
@@ -189,49 +441,53 @@
 
     justify-content: center;
 
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .startup-name strong {
     color: #0b2a52;
 
-    font-size: 15px;
+    font-size: 14px;
 }
 
 
-/* =========================================
+/* =========================================================
    INDUSTRY
-========================================= */
+========================================================= */
 
 .industry-badge {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 7px;
+    gap: 6px;
 
     background: #edf4ff;
 
     color: #2463d4;
 
-    padding: 7px 12px;
+    padding: 6px 10px;
 
     border-radius: 20px;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
+
+    white-space: nowrap;
 }
 
 
-/* =========================================
+/* =========================================================
    DESCRIPTION
-========================================= */
+========================================================= */
 
 .startup-description {
-    max-width: 280px;
+    width: 240px;
 
-    line-height: 1.5;
+    line-height: 1.45;
+
+    color: #667085;
 
     overflow: hidden;
 
@@ -245,42 +501,213 @@
 }
 
 
-/* =========================================
+/* =========================================================
+   STATUS
+========================================================= */
+
+.startup-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.startup-status.pending {
+    background: #fff4dc;
+
+    color: #c88700;
+}
+
+.startup-status.approved {
+    background: #e5f8ef;
+
+    color: #0e9c62;
+}
+
+.startup-status.rejected {
+    background: #ffe7e7;
+
+    color: #d53e3e;
+}
+
+.startup-status.suspended {
+    background: #ececef;
+
+    color: #62656b;
+}
+
+
+/* =========================================================
    WEBSITE
-========================================= */
+========================================================= */
 
 .website-link {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 7px;
+    justify-content: center;
+
+    gap: 6px;
 
     background: #18b9e8;
 
-    color: white;
+    color: #ffffff;
 
     text-decoration: none;
 
-    padding: 8px 13px;
+    padding:
+        7px 11px;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background .2s ease;
 }
 
 .website-link:hover {
     background: #0b9dcc;
 
-    color: white;
+    color: #ffffff;
 }
 
 
-/* =========================================
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.startup-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    white-space: nowrap;
+}
+
+
+.startup-action {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.startup-action:hover {
+    transform: translateY(-1px);
+}
+
+.startup-action:disabled {
+    opacity: .5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* View */
+
+.startup-action.view {
+    background: #e9f2ff;
+
+    color: #2867c7;
+}
+
+.startup-action.view:hover {
+    background: #d8e8ff;
+}
+
+
+/* Approve */
+
+.startup-action.approve {
+    background: #e5f8ef;
+
+    color: #0e9c62;
+}
+
+.startup-action.approve:hover {
+    background: #d3f1e3;
+}
+
+
+/* Reject */
+
+.startup-action.reject {
+    background: #ffe7e7;
+
+    color: #d53e3e;
+}
+
+.startup-action.reject:hover {
+    background: #ffd7d7;
+}
+
+
+/* Suspend */
+
+.startup-action.suspend {
+    background: #eeeeef;
+
+    color: #60636a;
+}
+
+.startup-action.suspend:hover {
+    background: #e2e2e4;
+}
+
+
+/* Restore */
+
+.startup-action.restore {
+    background: #e7f7fc;
+
+    color: #0b9dcc;
+}
+
+.startup-action.restore:hover {
+    background: #d4f0f8;
+}
+
+
+/* =========================================================
    EMPTY
-========================================= */
+========================================================= */
 
 .no-startups {
     text-align: center;
@@ -291,28 +718,31 @@
 }
 
 .no-startups svg {
+    display: block;
+
+    margin:
+        0 auto 10px;
+
     font-size: 40px;
 
     color: #aaa;
-
-    margin-bottom: 10px;
 }
 
 .no-startups p {
     margin: 0;
 
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
-/* =========================================
+/* =========================================================
    LOADING
-========================================= */
+========================================================= */
 
 .startups-loading {
-    background: white;
-
     min-height: 300px;
+
+    background: #ffffff;
 
     display: flex;
 
@@ -322,28 +752,34 @@
 
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
 }
 
 .startups-loading h3 {
+    margin-top: 15px;
+
     color: #0b2a52;
 
-    margin-top: 15px;
+    font-size: 18px;
 }
 
 .startup-spinner {
     width: 45px;
     height: 45px;
 
-    border: 4px solid #e5e5e5;
+    border:
+        4px solid #e5e5e5;
 
-    border-top: 4px solid #18b9e8;
+    border-top:
+        4px solid #18b9e8;
 
     border-radius: 50%;
 
-    animation: startupSpin 0.8s linear infinite;
+    animation:
+        startupSpin .8s linear infinite;
 }
 
 @keyframes startupSpin {
@@ -355,22 +791,343 @@
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* =========================================================
+   MODAL
+========================================================= */
+
+.startup-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(7, 29, 73, 0.48);
+
+    backdrop-filter: blur(3px);
+}
+
+
+.startup-modal {
+    width: 100%;
+
+    max-width: 620px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.20);
+}
+
+
+/* Modal header */
+
+.startup-modal-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        22px 24px;
+
+    border-bottom:
+        1px solid #edf0f4;
+}
+
+.startup-modal-header h3 {
+    margin: 0 0 9px;
+
+    color: #0b2a52;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* Close */
+
+.startup-modal-close {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #f2f4f7;
+
+    color: #667085;
+
+    cursor: pointer;
+}
+
+.startup-modal-close:hover {
+    background: #ffe7e7;
+
+    color: #d53e3e;
+}
+
+
+/* Modal body */
+
+.startup-modal-body {
+    padding:
+        22px 24px;
+}
+
+
+.startup-detail-item {
+    margin-bottom: 20px;
+}
+
+.startup-detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.startup-detail-item > span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #7b8794;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.startup-detail-item strong {
+    color: #0b2a52;
+
+    font-size: 15px;
+}
+
+.startup-detail-item p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.startup-detail-item a {
+    color: #0b9dcc;
+
+    font-size: 14px;
+
+    word-break: break-all;
+}
+
+
+/* Modal footer */
+
+.startup-modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding:
+        16px 24px;
+
+    border-top:
+        1px solid #edf0f4;
+}
+
+
+.modal-close-btn {
+    min-width: 90px;
+
+    padding:
+        9px 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #09264d;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    background: #071d49;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .startup-summary {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 768px) {
+
+    .startups-page {
+        padding: 18px;
+    }
 
     .startups-header {
         flex-direction: column;
 
         align-items: flex-start;
 
+        padding: 22px;
+
         gap: 15px;
     }
 
     .startups-header h2 {
         font-size: 24px;
+    }
+
+    .startups-header p {
+        font-size: 14px;
+    }
+
+    .startup-count {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .startup-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .startups-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .startup-status-filter {
+        width: 100%;
+    }
+
+
+    .startups-table-container {
+        -webkit-overflow-scrolling: touch;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .startups-page {
+        padding: 14px;
+    }
+
+    .startups-header {
+        padding: 18px;
+
+        border-radius: 10px;
+    }
+
+    .startups-header h2 {
+        font-size: 21px;
+    }
+
+    .startups-header p {
+        font-size: 13px;
+    }
+
+
+    .startup-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .startup-summary-card {
+        padding: 14px;
+    }
+
+
+    .startup-count {
+        font-size: 13px;
+
+        padding:
+            10px 14px;
+    }
+
+
+    .startups-search {
+        padding:
+            12px 14px;
+    }
+
+
+    .startup-modal-overlay {
+        padding: 12px;
+    }
+
+    .startup-modal-header {
+        padding:
+            18px;
+    }
+
+    .startup-modal-body {
+        padding:
+            18px;
+    }
+
+    .startup-modal-footer {
+        padding:
+            14px 18px;
     }
 
 }

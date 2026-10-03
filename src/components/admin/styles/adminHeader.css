@@ -1,132 +1,902 @@
-/* Push content below fixed navbar */
-body {
-    padding-top: 80px;
+/* =========================================================
+   STARTUPHUB ADMIN HEADER
+   Matches the existing AdminHeader.jsx
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* ===========================
-   Navbar
-=========================== */
 
-.navbar {
-    height: 80px;
-    background: #0d2248 !important;
-    z-index: 9999;
+/* =========================================================
+   ADMIN NAVBAR
+========================================================= */
+
+header .navbar {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    height: 72px;
+    min-height: 72px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #071d49 !important;
+
+    border: none !important;
+
+    z-index: 1200 !important;
+
+    box-shadow:
+        0 4px 18px rgba(7, 29, 73, 0.18) !important;
 }
 
-.navbar .container-fluid {
-    height: 100%;
-}
 
-/* ===========================
-   Logo
-=========================== */
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
 
-.navbar-brand {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff !important;
+header .navbar > .container-fluid {
+    width: 100%;
+    height: 72px;
+    min-height: 72px;
 
     display: flex;
     align-items: center;
+
+    padding-left: 28px;
+    padding-right: 28px;
+
+    box-sizing: border-box;
 }
 
-.navbar-brand svg {
-    font-size: 32px;
-}
 
-/* ===========================
-   Navigation
-=========================== */
+/* =========================================================
+   BRAND
+========================================================= */
 
-.navbar-nav {
+header .navbar-brand {
+    display: flex;
     align-items: center;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-family:
+        var(--sh-font,
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif);
+
+    font-size: 21px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
 }
 
-.nav-link {
-    color: #fff !important;
-    margin-left: 18px;
-    font-size: 1.05rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+header .navbar-brand:hover {
+    color: #ffffff !important;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: #20c4f4 !important;
+
+/* Rocket */
+
+header .navbar-brand svg {
+    color: #19c8f3 !important;
+
+    width: 22px;
+    height: 22px;
+
+    margin-right: 9px;
+
+    flex-shrink: 0;
 }
 
-/* ===========================
-   View Website Button
-=========================== */
 
-.view-btn {
-    margin-left: 25px;
+/* =========================================================
+   NAVIGATION AREA
+========================================================= */
 
-    width: 170px;
-    height: 48px;
+header .navbar-collapse {
+    display: flex;
+    align-items: center;
 
-    background: #20c4f4;
-    color: #fff !important;
+    flex-grow: 1;
+}
 
-    border: none;
-    border-radius: 50px;
+
+/* =========================================================
+   NAV LINKS CONTAINER
+========================================================= */
+
+header .navbar-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    margin-left: auto !important;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+header .navbar-nav .nav-link {
+    position: relative;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    height: 72px;
+
+    padding: 0 16px !important;
+
+    margin: 0;
+
+    color: #ffffff !important;
+
+    font-family:
+        var(--sh-font,
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    text-decoration: none !important;
+
+    background: transparent !important;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Hover */
+
+header .navbar-nav .nav-link:hover {
+    color: #19c8f3 !important;
+}
+
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+
+header .navbar-nav .nav-link.active {
+    color: #19c8f3 !important;
+
     font-weight: 600;
-    text-decoration: none;
-
-    transition: all 0.3s ease;
 }
 
-.view-btn:hover {
-    background: #16acd8;
-    color: #fff !important;
-    transform: translateY(-2px);
+
+/* Active underline */
+
+header .navbar-nav .nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+
+    height: 3px;
+
+    background: #19c8f3;
+
+    border-radius: 3px 3px 0 0;
 }
 
-/* ===========================
-   Mobile Toggle
-=========================== */
+/* =========================================================
+   VIEW WEBSITE
+========================================================= */
 
-.navbar-toggler {
-    border: 1px solid #20c4f4;
+header .view-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px !important;
+    min-width: 118px;
+
+    margin-left: 10px !important;
+    padding: 0 18px !important;
+
+    border: 1px solid #19c8f3 !important;
+    border-radius: 8px;
+
+    color: #19c8f3 !important;
+
+    background: rgba(25, 200, 243, 0.08) !important;
+
+    font-family:
+        var(--sh-font,
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif);
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    line-height: 1;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
+
+header .view-btn:hover {
+    color: #071d49 !important;
+
+    background: #19c8f3 !important;
+
+    border-color: #19c8f3 !important;
+
+    transform: translateY(-1px);
 }
 
-/* ===========================
-   Responsive
-=========================== */
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+header .logout-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px !important;
+    min-width: 88px;
+
+    margin-left: 8px !important;
+    padding: 0 18px !important;
+
+    border: 1px solid #19c8f3 !important;
+    border-radius: 8px;
+
+    color: #19c8f3 !important;
+
+    background: rgba(25, 200, 243, 0.08) !important;
+
+    font-family:
+        var(--sh-font,
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif);
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Logout hover */
+
+header .logout-btn:hover {
+    color: #ffffff !important;
+
+    background: #19c8f3 !important;
+
+    border-color: #18c8f3 !important;
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+header .navbar-toggler {
+    display: none;
+
+    width: 42px;
+    height: 40px;
+
+    padding: 0;
+
+    margin-left: auto;
+
+    border: 1px solid #19c8f3 !important;
+
+    border-radius: 8px;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    outline: none !important;
+}
+
+header .navbar-toggler:hover {
+    border-color: #19c8f3 !important;
+}
+
+header .navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+/* =========================================================
+   MOBILE MENU ICON
+========================================================= */
+
+header .navbar-toggler-icon {
+    width: 22px;
+    height: 22px;
+
+    background-image:
+        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+/* =========================================================
+   ADMIN MAIN CONTENT
+========================================================= */
+
+.admin-main-content {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding:
+        72px
+        0
+        30px;
+
+    background: #f5f8fc;
+
+    box-sizing: border-box;
+
+    font-family:
+        var(--sh-font,
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ALL ADMIN PAGE DIRECT CHILDREN
+========================================================= */
+
+.admin-main-content > * {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT
+========================================================= */
+
+.admin-dashboard-container {
+    width: 100%;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   OTHER ADMIN PAGE CONTAINER
+========================================================= */
+
+.admin-page-container {
+    width: 100%;
+
+    margin: 0 !important;
+
+    padding:
+        28px
+        30px
+        40px !important;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 991px) {
 
-    .navbar {
-        height: auto;
-        padding: 12px 0;
+    header .navbar {
+        height: 68px;
+        min-height: 68px;
     }
 
-    .navbar-collapse {
-        background: #0d2248;
-        margin-top: 15px;
-        padding: 15px;
-        border-radius: 10px;
+
+    header .navbar > .container-fluid {
+        height: 68px;
+        min-height: 68px;
+
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .navbar-nav {
-        align-items: flex-start;
+
+    header .navbar-brand {
+        font-size: 20px;
     }
 
-    .nav-link {
-        margin: 10px 0;
+
+    header .navbar-brand svg {
+        width: 21px;
+        height: 21px;
     }
 
-    .view-btn {
+
+    /* =====================================================
+       MOBILE TOGGLE
+    ===================================================== */
+
+    header .navbar-toggler {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       MOBILE COLLAPSE
+    ===================================================== */
+
+    header .navbar-collapse {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+        right: 0;
+
         width: 100%;
-        margin: 15px 0 0;
+
+        display: none;
+
+        padding:
+            14px
+            20px
+            22px;
+
+        background: #071d49;
+
+        border-top:
+            1px solid
+            rgba(255, 255, 255, 0.08);
+
+        box-shadow:
+            0 12px 25px
+            rgba(7, 29, 73, 0.25);
+
+        box-sizing: border-box;
     }
+
+
+    header .navbar-collapse.show {
+        display: block;
+    }
+
+
+    /* =====================================================
+       ONE SINGLE COLUMN
+    ===================================================== */
+
+    header .navbar-nav {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       NORMAL NAV LINKS
+    ===================================================== */
+
+    header .navbar-nav .nav-link {
+
+        width: 100% !important;
+
+        height: 48px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        margin: 0 !important;
+
+        padding:
+            0 16px !important;
+
+        box-sizing: border-box;
+
+        border-radius: 8px;
+
+        color: #ffffff !important;
+
+        font-size: 16px;
+
+        text-align: left;
+    }
+
+
+    header .navbar-nav .nav-link:hover {
+        color: #19c8f3 !important;
+
+        background:
+            rgba(25, 200, 243, 0.08) !important;
+    }
+
+
+    header .navbar-nav .nav-link.active {
+
+        color: #19c8f3 !important;
+
+        background:
+            rgba(25, 200, 243, 0.12) !important;
+    }
+
+
+    /* Remove desktop underline */
+
+    header .navbar-nav .nav-link.active::after {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       VIEW WEBSITE
+       IMPORTANT:
+       selector is NOT dependent on .navbar-nav
+    ===================================================== */
+
+    header .navbar-collapse .view-btn {
+
+        width: 100% !important;
+
+        height: 48px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        margin:
+            4px 0 0 !important;
+
+        padding:
+            0 16px !important;
+
+        box-sizing: border-box;
+
+        border-radius: 8px;
+
+        color: #19c8f3 !important;
+
+        background: transparent !important;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        text-align: left;
+
+        text-decoration: none !important;
+    }
+
+
+    header .navbar-collapse .view-btn:hover {
+
+        color: #19c8f3 !important;
+
+        background:
+            rgba(25, 200, 243, 0.08) !important;
+    }
+
+
+    /* =====================================================
+       LOGOUT
+       IMPORTANT:
+       selector is NOT dependent on .navbar-nav
+    ===================================================== */
+
+    header .navbar-collapse .logout-btn {
+
+        width: 100% !important;
+
+        height: 48px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        margin:
+            4px 0 0 !important;
+
+        padding:
+            0 16px !important;
+
+        box-sizing: border-box;
+
+        border: none !important;
+
+        border-radius: 8px;
+
+        color: #ffffff !important;
+
+        background: transparent !important;
+
+        font-family: inherit;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        text-align: left;
+
+        cursor: pointer;
+    }
+
+
+    header .navbar-collapse .logout-btn:hover {
+
+        color: #19c8f3 !important;
+
+        background:
+            rgba(25, 200, 243, 0.08) !important;
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+    ===================================================== */
+
+    .admin-main-content {
+        padding-top: 68px;
+    }
+
+
+    .admin-page-container {
+        padding:
+            24px
+            20px
+            35px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    header .navbar {
+        height: 64px;
+        min-height: 64px;
+    }
+
+
+    header .navbar > .container-fluid {
+        height: 64px;
+        min-height: 64px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    header .navbar-brand {
+        font-size: 18px;
+    }
+
+
+    header .navbar-brand svg {
+        width: 19px;
+        height: 19px;
+
+        margin-right: 7px;
+    }
+
+
+    header .navbar-toggler {
+        width: 40px;
+        height: 38px;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    header .navbar-collapse {
+
+        top: 64px;
+
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        padding:
+            12px
+            15px
+            20px;
+    }
+
+
+    /* =====================================================
+       ALL ITEMS EXACT SAME COLUMN
+    ===================================================== */
+
+    header .navbar-nav .nav-link,
+    header .navbar-collapse .view-btn,
+    header .navbar-collapse .logout-btn {
+
+        width: 100% !important;
+
+        height: 46px !important;
+
+        min-height: 46px;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    .admin-main-content {
+        padding-top: 64px;
+    }
+
+
+    .admin-page-container {
+        padding:
+            20px
+            15px
+            30px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    header .navbar-brand {
+        font-size: 17px;
+    }
+
+
+    header .navbar-brand svg {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    header .navbar-collapse {
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    header .navbar-nav .nav-link,
+    header .navbar-collapse .view-btn,
+    header .navbar-collapse .logout-btn {
+
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+
+    .admin-page-container {
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+html,
+body {
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+
+#root {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
 }

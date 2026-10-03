@@ -36,8 +36,8 @@
 
     overflow: hidden;
 
-    /* Space below fixed navbar */
-    padding-top: 55px;
+    /* Fixed public header = 72px */
+    padding-top: 92px;
     padding-bottom: 55px;
 
     font-family:
@@ -75,6 +75,7 @@
 
 .hero-content {
     position: relative;
+
     z-index: 5;
 
     padding-top: 5px;
@@ -82,9 +83,86 @@
 
 
 /* =========================================================
-   BADGE
+   HERO BADGE
 ========================================================= */
 
+.hero-badge {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 11px 22px;
+
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: #EAF9FF !important;
+
+    border: 2px solid #1EC8F3 !important;
+
+    color: #071D49 !important;
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 22px rgba(7, 29, 73, 0.08),
+        0 0 0 3px rgba(30, 200, 243, 0.06);
+
+    position: relative;
+
+    z-index: 50;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Rocket icon */
+
+.hero-badge svg {
+    width: 17px;
+    height: 17px;
+
+    color: #079FD7 !important;
+
+    fill: #079FD7;
+
+    flex-shrink: 0;
+}
+
+
+/* Badge hover */
+
+.hero-badge:hover {
+    background: #DDF5FF !important;
+
+    border-color: #079FD7 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(7, 159, 215, 0.15);
+}
 
 
 /* =========================================================
@@ -107,7 +185,7 @@
 }
 
 
-/* Gradient part */
+/* Gradient text */
 
 .hero-gradient-text {
     background:
@@ -141,73 +219,6 @@
     line-height: 1.7;
 
     font-weight: 400;
-}
-
-/* =========================================================
-   BADGE
-========================================================= */
-
-/* =========================================================
-   HERO BADGE
-========================================================= */
-
-.hero-badge {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 11px 22px;
-    margin-top: 0;
-    margin-bottom: 18px;
-
-    border-radius: 50px;
-
-    /* StartupHub brand colors */
-    background: #EAF9FF !important;
-    border: 2px solid #1EC8F3 !important;
-
-    color: #071D49 !important;
-
-    font-family:
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
-
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.2;
-
-    white-space: nowrap;
-
-    box-shadow:
-        0 8px 22px rgba(7, 29, 73, 0.08),
-        0 0 0 3px rgba(30, 200, 243, 0.06);
-
-    position: relative;
-    z-index: 50;
-}
-
-/* Rocket icon */
-.hero-badge svg {
-    width: 17px;
-    height: 17px;
-
-    color: #079FD7 !important;
-    fill: #079FD7;
-
-    flex-shrink: 0;
-}
-
-/* Hover effect */
-.hero-badge:hover {
-    background: #DDF5FF !important;
-    border-color: #079FD7 !important;
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 10px 25px rgba(7, 159, 215, 0.15);
 }
 
 
@@ -257,6 +268,8 @@
 
     font-weight: 700;
 
+    text-decoration: none;
+
     box-shadow:
         0 10px 24px rgba(7, 159, 215, 0.22);
 
@@ -264,6 +277,7 @@
         transform .25s ease,
         box-shadow .25s ease;
 }
+
 
 .hero-primary-btn:hover {
     color: #fff;
@@ -301,8 +315,11 @@
 
     font-weight: 600;
 
+    text-decoration: none;
+
     transition: all .25s ease;
 }
+
 
 .hero-secondary-btn:hover {
     background: var(--hero-cyan);
@@ -320,6 +337,7 @@
 .hero-secondary-btn span {
     transition: transform .25s ease;
 }
+
 
 .hero-secondary-btn:hover span {
     transform: translateX(4px);
@@ -345,6 +363,7 @@
 
     font-weight: 500;
 }
+
 
 .trust-dot {
     width: 8px;
@@ -375,6 +394,7 @@
     margin-top: 30px;
 }
 
+
 .hero-stat {
     display: flex;
 
@@ -398,12 +418,13 @@
     transition: transform .25s ease;
 }
 
+
 .hero-stat:hover {
     transform: translateY(-3px);
 }
 
 
-/* Stat Icon */
+/* Stat icon */
 
 .stat-icon {
     display: flex;
@@ -424,7 +445,7 @@
 }
 
 
-/* Stat Number */
+/* Stat number */
 
 .hero-stat h3 {
     margin: 0;
@@ -437,7 +458,7 @@
 }
 
 
-/* Stat Label */
+/* Stat label */
 
 .hero-stat p {
     margin: 1px 0 0;
@@ -460,6 +481,7 @@
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     min-height: 560px;
@@ -521,7 +543,8 @@
 
     border-radius: 20px;
 
-    animation: heroFloat 5s ease-in-out infinite;
+    animation:
+        heroFloat 5s ease-in-out infinite;
 }
 
 
@@ -575,8 +598,10 @@
 
     backdrop-filter: blur(10px);
 
-    animation: floatingCard 4s ease-in-out infinite;
+    animation:
+        floatingCard 4s ease-in-out infinite;
 }
+
 
 .floating-card strong {
     display: block;
@@ -587,6 +612,7 @@
 
     font-weight: 700;
 }
+
 
 .floating-card small {
     display: block;
@@ -603,6 +629,7 @@
 
 .floating-card-top {
     top: 30px;
+
     left: -20px;
 }
 
@@ -611,6 +638,7 @@
 
 .floating-card-bottom {
     right: -15px;
+
     bottom: 60px;
 
     animation-delay: 1s;
@@ -635,11 +663,13 @@
     border-radius: 10px;
 }
 
+
 .floating-icon.purple {
     background: rgba(99, 91, 255, 0.11);
 
     color: var(--hero-purple);
 }
+
 
 .floating-icon.blue {
     background: rgba(30, 200, 243, 0.12);
@@ -676,6 +706,7 @@
         0 10px 25px rgba(7, 29, 73, 0.10);
 }
 
+
 .success-check {
     display: flex;
 
@@ -694,6 +725,7 @@
     font-weight: 800;
 }
 
+
 .success-badge strong {
     display: block;
 
@@ -701,6 +733,7 @@
 
     font-size: 11px;
 }
+
 
 .success-badge small {
     display: block;
@@ -731,6 +764,7 @@
 
 }
 
+
 @keyframes floatingCard {
 
     0% {
@@ -749,7 +783,7 @@
 
 
 /* =========================================================
-   TABLET
+   LARGE TABLET
 ========================================================= */
 
 @media (max-width: 1199px) {
@@ -774,13 +808,18 @@
 
 
 /* =========================================================
-   MOBILE / TABLET
+   TABLET / MOBILE
 ========================================================= */
 
 @media (max-width: 991px) {
 
     .hero-section {
-        padding-top: 30px;
+        /*
+         * Public header is 64px on tablet.
+         * Extra spacing prevents the badge/title
+         * from going underneath the fixed header.
+         */
+        padding-top: 82px;
         padding-bottom: 50px;
 
         text-align: center;
@@ -794,6 +833,12 @@
         padding-top: 0;
 
         margin-bottom: 30px;
+    }
+
+    .hero-badge {
+        margin-top: 0;
+
+        margin-bottom: 20px;
     }
 
     .hero-title {
@@ -847,14 +892,51 @@
 
 
 /* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding-top: 80px;
+
+        padding-bottom: 45px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-top: 0;
+    }
+
+    .hero-badge {
+        margin-top: 0;
+    }
+
+}
+
+
+/* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 576px) {
 
     .hero-section {
-        padding-top: 22px;
+        padding-top: 76px;
+
         padding-bottom: 40px;
+    }
+
+    .hero-badge {
+        max-width: 92%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        white-space: normal;
+
+        text-align: center;
     }
 
     .hero-title {
@@ -883,7 +965,8 @@
     .hero-stats {
         display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(3, 1fr);
 
         gap: 7px;
     }
@@ -932,6 +1015,35 @@
 
     .success-badge {
         display: none;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-section {
+        padding-top: 74px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-stat h3 {
+        font-size: 15px;
+    }
+
+    .hero-stat p {
+        font-size: 9px;
     }
 
 }

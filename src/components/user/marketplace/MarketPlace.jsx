@@ -39,35 +39,46 @@ export default function Marketplace() {
       const projectData =
         await ProjectService.getAllProjects();
 
-      const projectsWithBusiness =
-        await Promise.all(
-          projectData.map(async (project) => {
-            let business = null;
+            const projectsWithBusiness =
+              await Promise.all(
+                  projectData.map(async (project) => {
+                      let business = null;
 
-            if (project.businessId) {
-              try {
-                business =
-                  await BusinessService.getBusiness(
-                    project.businessId
-                  );
-              } catch (error) {
-                console.log(
-                  "Business not found:",
-                  project.businessId
-                );
-              }
-            }
+                      if (project.businessId) {
+                          try {
+                              business =
+                                  await BusinessService.getBusiness(
+                                      project.businessId
+                                  );
+                          } catch (error) {
+                              console.log(
+                                  "Business not found:",
+                                  project.businessId
+                              );
+                          }
+                      }
 
-            return {
-              ...project,
-              businessName:
-                business?.businessName ||
-                "Startup Company",
-              businessLogo:
-                business?.logo || "",
-            };
-          })
-        );
+                      // Only approved startups can appear
+                      // in the public marketplace.
+                      if (business?.status !== "approved") {
+                          return null;
+                      }
+
+                      return {
+                          ...project,
+                          businessName:
+                              business.businessName ||
+                              "Startup Company",
+                          businessLogo:
+                              business.logo || "",
+                      };
+                  })
+              );
+
+          const approvedProjects =
+          projectsWithBusiness.filter(Boolean);
+
+      setProjects(approvedProjects);
 
       setProjects(projectsWithBusiness);
     } catch (error) {
