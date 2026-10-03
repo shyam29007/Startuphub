@@ -35,32 +35,40 @@ export default function Marketplace() {
   }, []);
 
   async function loadProjects() {
-    try {
-      const projectData =
-        await ProjectService.getAllProjects();
+      try {
+          const projectData =
+              await ProjectService.getAllProjects();
 
-            const projectsWithBusiness =
+          const projectsWithBusiness =
               await Promise.all(
                   projectData.map(async (project) => {
+                      // Project must have a business
+                      if (!project.businessId) {
+                          return null;
+                      }
+
                       let business = null;
 
-                      if (project.businessId) {
-                          try {
-                              business =
-                                  await BusinessService.getBusiness(
-                                      project.businessId
-                                  );
-                          } catch (error) {
-                              console.log(
-                                  "Business not found:",
+                      try {
+                          business =
+                              await BusinessService.getBusiness(
                                   project.businessId
                               );
-                          }
+                      } catch (error) {
+                          console.log(
+                              "Business not found:",
+                              project.businessId
+                          );
+
+                          return null;
                       }
 
                       // Only approved startups can appear
                       // in the public marketplace.
-                      if (business?.status !== "approved") {
+                      if (
+                          !business ||
+                          business.status !== "approved"
+                      ) {
                           return null;
                       }
 
@@ -75,25 +83,25 @@ export default function Marketplace() {
                   })
               );
 
+          // Remove projects whose business was missing
+          // or whose startup is not approved.
           const approvedProjects =
-          projectsWithBusiness.filter(Boolean);
+              projectsWithBusiness.filter(Boolean);
 
-      setProjects(approvedProjects);
+          setProjects(approvedProjects);
+      } catch (error) {
+          console.error(
+              "Marketplace Error:",
+              error
+          );
 
-      setProjects(projectsWithBusiness);
-    } catch (error) {
-      console.error(
-        "Marketplace Error:",
-        error
-      );
-
-      toast.error(
-        error.message ||
-          "Unable to load marketplace."
-      );
-    } finally {
-      setLoading(false);
-    }
+          toast.error(
+              error.message ||
+                  "Unable to load marketplace."
+          );
+      } finally {
+          setLoading(false);
+      }
   }
 
   // =========================
@@ -753,17 +761,18 @@ function MarketplaceStyles() {
       ========================= */
 
       .marketplace-grid {
-        display: grid;
-
-        grid-template-columns:
-          repeat(
-            auto-fit,
-            minmax(300px, 1fr)
+          display: grid;
+          grid-template-columns: repeat(
+              auto-fit,
+              minmax(300px, 1fr)
           );
-
-        gap: 24px;
+          gap: 24px;
       }
 
+      .marketplace-grid:has(.project-card:only-child) {
+          grid-template-columns: minmax(320px, 460px);
+          justify-content: center;
+      }
 
       /* =========================
          CARD
