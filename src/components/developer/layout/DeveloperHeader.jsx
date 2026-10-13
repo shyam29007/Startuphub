@@ -1,92 +1,53 @@
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaCode } from "react-icons/fa";
-
+import { FaRocket, FaBars, FaTimes, FaSignOutAlt } from "react-icons/fa";
 import AuthService from "../../../services/AuthService";
+import "./DeveloperHeader.css";
 
 export default function DeveloperHeader() {
-
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
+    const closeMenu = () => setMenuOpen(false);
 
     async function logout() {
-
-        await AuthService.logout();
-
-        localStorage.removeItem("user");
-
-        navigate("/login");
-
+        try {
+            await AuthService.logout();
+            localStorage.removeItem("user");
+            closeMenu();
+            navigate("/login");
+        } catch (error) {
+            console.error("Developer logout error:", error);
+        }
     }
 
+    const navClass = ({ isActive }) => `developer-nav-link${isActive ? " active" : ""}`;
+
     return (
-
-        <nav className="navbar navbar-expand-lg user-navbar fixed-top">
-
-            <div className="container-fluid">
-
-                <NavLink
-                    to="/developer"
-                    className="navbar-brand user-logo"
-                >
-                    <FaCode className="me-2" />
-                    StartupHub 
-                </NavLink>
-
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#developerNavbar"
-                    aria-controls="developerNavbar"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div
-                    className="collapse navbar-collapse"
-                    id="developerNavbar"
-                >
-
-                    <div className="navbar-nav mx-auto">
-
-                        <NavLink
-                            to="/developer"
-                            end
-                            className="nav-link"
-                        >
-                            Dashboard
-                        </NavLink>
-
-                        <NavLink
-                            to="/developer/projects"
-                            className="nav-link"
-                        >
-                            Browse Projects
-                        </NavLink>
-
-                        <NavLink
-                            to="/developer/applications"
-                            className="nav-link"
-                        >
-                            My Applications
-                        </NavLink>
-
-                    </div>
-
-                    <button
-                        className="btn user-login-btn"
-                        onClick={logout}
-                    >
-                        Logout
+        <header className="developer-header">
+            <nav className="developer-navbar">
+                <div className="developer-navbar-inner">
+                    <NavLink to="/developer" end className="developer-brand" onClick={closeMenu}>
+                        <span className="developer-brand-icon"><FaRocket /></span>
+                        <span>StartupHub Developer</span>
+                    </NavLink>
+                    <button type="button" className="developer-menu-toggle"
+                        onClick={() => setMenuOpen((open) => !open)}
+                        aria-controls="developerNavbar" aria-expanded={menuOpen}
+                        aria-label="Toggle developer navigation">
+                        {menuOpen ? <FaTimes /> : <FaBars />}
                     </button>
-
+                    <div className={`developer-nav-content${menuOpen ? " show" : ""}`} id="developerNavbar">
+                        <div className="developer-nav-links">
+                            <NavLink to="/developer" end className={navClass} onClick={closeMenu}>Dashboard</NavLink>
+                            <NavLink to="/developer/projects" className={navClass} onClick={closeMenu}>Browse Projects</NavLink>
+                            <NavLink to="/developer/applications" className={navClass} onClick={closeMenu}>My Applications</NavLink>
+                        </div>
+                        <button type="button" className="developer-logout-btn" onClick={logout}>
+                            <FaSignOutAlt aria-hidden="true" /><span>Logout</span>
+                        </button>
+                    </div>
                 </div>
-
-            </div>
-
-        </nav>
-
+            </nav>
+        </header>
     );
-
 }

@@ -8,6 +8,7 @@ import AuthService from "../../../services/AuthService";
 import ProjectService from "../../../services/ProjectService";
 import BusinessService from "../../../services/BusinessService";
 import ApplicationService from "../../../services/ApplicationService";
+import "./ProjectDetails.css";
 
 export default function ProjectDetails() {
 
@@ -284,7 +285,7 @@ export default function ProjectDetails() {
                     page="Project"
                 />
 
-                <div className="container py-5">
+                <div className="container py-5 developer-project-details-page">
 
                     <h3 className="text-center">
 
@@ -316,7 +317,7 @@ export default function ProjectDetails() {
                     page="Project"
                 />
 
-                <div className="container py-5">
+                <div className="container py-5 developer-project-details-page">
 
                     <div className="alert alert-danger text-center">
 
@@ -343,7 +344,7 @@ export default function ProjectDetails() {
             />
 
 
-            <div className="container py-5">
+            <div className="container py-5 developer-project-details-page">
 
 
                 <div className="card shadow border-0">

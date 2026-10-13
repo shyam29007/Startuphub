@@ -1,0 +1,58 @@
+/* Project details styling, scoped so Bootstrap and other Developer pages remain intact. */
+.developer-project-details-page {
+    color: #102a56;
+    font-family: var(--sh-font, "Poppins", "Segoe UI", Arial, sans-serif);
+}
+.developer-project-details-page > .card {
+    max-width: 1040px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #e6edf5 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 12px 32px rgba(16, 42, 86, .08) !important;
+}
+.developer-project-details-page > .card > .card-body {
+    padding: clamp(20px, 4vw, 38px) !important;
+}
+.developer-project-details-page h1,
+.developer-project-details-page h2,
+.developer-project-details-page h3,
+.developer-project-details-page h4,
+.developer-project-details-page h5 {
+    color: #102a56;
+    font-weight: 700;
+}
+.developer-project-details-page .text-muted { color: #64748b !important; }
+.developer-project-details-page .form-control {
+    min-height: 44px;
+    border: 1px solid #dbe5f0;
+    border-radius: 10px;
+}
+.developer-project-details-page textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+}
+.developer-project-details-page .form-control:focus {
+    border-color: #1ec8f3;
+    box-shadow: 0 0 0 3px rgba(30, 200, 243, .15);
+}
+.developer-project-details-page .btn {
+    border-radius: 9px;
+    font-weight: 600;
+    transition: .2s ease;
+}
+.developer-project-details-page .btn-success {
+    background: #079fd7;
+    border-color: #079fd7;
+}
+.developer-project-details-page .btn-success:hover {
+    background: #071d49;
+    border-color: #071d49;
+}
+.developer-project-details-page .alert {
+    border-radius: 12px;
+}
+@media (max-width: 576px) {
+    .developer-project-details-page { padding-top: 1.25rem !important; }
+    .developer-project-details-page > .card > .card-body { padding: 18px !important; }
+}

@@ -1,0 +1,17 @@
+/* Shared Developer canvas, matching Founder visual language without global Bootstrap overrides. */
+.developer-layout {
+ --dev-navy:#071d49; --dev-cyan:#1ec8f3; --dev-blue:#079fd7; --dev-bg:#f5f9fd; --dev-text:#102a56; --dev-muted:#64748b;
+ min-height:100vh;
+ background:radial-gradient(circle at 95% 5%,rgba(30,200,243,.08),transparent 23%),radial-gradient(circle at 5% 75%,rgba(99,91,255,.045),transparent 25%),var(--dev-bg);
+ color:var(--dev-text); font-family:var(--sh-font,"Poppins","Segoe UI",Arial,sans-serif);
+}
+.developer-main { width:100%; min-height:calc(100vh - 72px); padding:96px 28px 35px; box-sizing:border-box; }
+.developer-main > * { max-width:1600px; margin-left:auto; margin-right:auto; }
+.developer-main .container { width:100%; max-width:1600px; }
+.developer-main .card { border:1px solid #e6edf5; border-radius:16px; box-shadow:0 8px 25px rgba(16,42,86,.07); }
+.developer-main .form-control,.developer-main .form-select { border-color:#dbe5f0; border-radius:9px; }
+.developer-main .form-control:focus,.developer-main .form-select:focus { border-color:#1ec8f3; box-shadow:0 0 0 3px rgba(30,200,243,.15); }
+.developer-main .btn-primary { background:#079fd7; border-color:#079fd7; font-weight:700; }
+.developer-main .btn-primary:hover { background:#071d49; border-color:#071d49; }
+@media(max-width:900px) { .developer-main { padding:92px 20px 30px; } }
+@media(max-width:576px) { .developer-main { padding:84px 14px 25px; } .developer-main .container { padding-left:0; padding-right:0; } }

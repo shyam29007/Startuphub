@@ -13,16 +13,18 @@
 ===================================================== */
 
 .developer-welcome {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 28px 30px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #071d49 0%, #123b7a 58%, #0a74ae 100%);
+    border: 1px solid rgba(30, 200, 243, 0.15);
+    border-radius: 20px;
+    padding: 32px 38px;
     margin-bottom: 25px;
+    box-shadow: 0 18px 40px rgba(7, 29, 73, 0.15);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
 }
 
 .developer-welcome h1 {
@@ -31,14 +33,16 @@
     font-size: 28px;
     font-weight: 700;
 
-    color: #222;
+    color: #ffffff;
+    letter-spacing: -0.4px;
 }
 
 .developer-welcome p {
     margin: 0;
 
     font-size: 15px;
-    color: #777;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
 }
 
 
@@ -49,7 +53,7 @@
 .developer-profile-btn {
     border: none;
 
-    background: #0d6efd;
+    background: #079fd7;
     color: white;
 
     padding: 11px 18px;
@@ -69,7 +73,7 @@
 }
 
 .developer-profile-btn:hover {
-    background: #0b5ed7;
+    background: #071d49;
     transform: translateY(-2px);
 }
 
@@ -140,7 +144,7 @@
 
 .developer-stat-icon.blue {
     background: #e8f1ff;
-    color: #0d6efd;
+    color: #079fd7;
 }
 
 .developer-stat-icon.purple {
@@ -178,7 +182,7 @@
 
     font-size: 14px;
 
-    color: #777;
+    color: #64748b;
 
     margin-bottom: 4px;
 }
@@ -191,7 +195,7 @@
 
     font-weight: 700;
 
-    color: #222;
+    color: #102a56;
 }
 
 
@@ -202,7 +206,7 @@
 
     font-size: 12px;
 
-    color: #888;
+    color: #64748b;
 }
 
 
@@ -246,7 +250,7 @@
 
     font-weight: 700;
 
-    color: #222;
+    color: #102a56;
 }
 
 
@@ -255,7 +259,7 @@
 
     font-size: 13px;
 
-    color: #888;
+    color: #64748b;
 }
 
 
@@ -264,7 +268,7 @@
 
     background: transparent;
 
-    color: #0d6efd;
+    color: #079fd7;
 
     font-weight: 600;
 
@@ -330,7 +334,7 @@
 
     background: #eef4ff;
 
-    color: #0d6efd;
+    color: #079fd7;
 
     display: flex;
 
@@ -353,7 +357,7 @@
 
     background: #e9f2ff;
 
-    color: #0d6efd;
+    color: #079fd7;
 
     display: flex;
 
@@ -382,7 +386,7 @@
 
     font-size: 14px;
 
-    color: #333;
+    color: #102a56;
 }
 
 
@@ -393,7 +397,7 @@
 
     font-size: 12px;
 
-    color: #888;
+    color: #64748b;
 
     white-space: nowrap;
 
@@ -454,11 +458,11 @@
 ===================================================== */
 
 .developer-view-btn {
-    border: 1px solid #0d6efd;
+    border: 1px solid #079fd7;
 
     background: transparent;
 
-    color: #0d6efd;
+    color: #079fd7;
 
     padding: 5px 12px;
 
@@ -473,7 +477,7 @@
 
 
 .developer-view-btn:hover {
-    background: #0d6efd;
+    background: #079fd7;
 
     color: #ffffff;
 }
@@ -509,7 +513,7 @@
 .developer-empty button {
     border: none;
 
-    background: #0d6efd;
+    background: #079fd7;
 
     color: #fff;
 
@@ -556,7 +560,7 @@
 
     font-weight: 600;
 
-    color: #333;
+    color: #102a56;
 
     box-shadow:
         0 3px 15px rgba(0, 0, 0, 0.06);
@@ -570,12 +574,12 @@
 .developer-quick-actions button:hover {
     transform: translateY(-3px);
 
-    color: #0d6efd;
+    color: #079fd7;
 }
 
 
 .developer-quick-actions svg {
-    color: #0d6efd;
+    color: #079fd7;
 }
 
 
@@ -596,7 +600,7 @@
 
     gap: 12px;
 
-    color: #777;
+    color: #64748b;
 }
 
 
@@ -606,7 +610,7 @@
 
     border: 4px solid #e9ecef;
 
-    border-top-color: #0d6efd;
+    border-top-color: #079fd7;
 
     border-radius: 50%;
 
@@ -706,4 +710,41 @@
         width: 100%;
     }
 
+}
+/* Shared StartupHub visual polish; scoped to the Developer dashboard only. */
+.developer-dashboard,
+.developer-dashboard * {
+    box-sizing: border-box;
+}
+.developer-dashboard {
+    max-width: 1600px;
+    margin: 0 auto;
+    color: #102a56;
+    font-family: var(--sh-font, "Poppins", "Segoe UI", Arial, sans-serif);
+}
+.developer-stat-card,
+.developer-section,
+.developer-quick-actions button {
+    border: 1px solid #e6edf5;
+    box-shadow: 0 8px 25px rgba(16, 42, 86, 0.06);
+}
+.developer-stat-card:hover,
+.developer-quick-actions button:hover {
+    border-color: rgba(30, 200, 243, 0.45);
+    box-shadow: 0 12px 28px rgba(16, 42, 86, 0.10);
+}
+.developer-stat-icon.blue {
+    background: rgba(30, 200, 243, 0.15);
+    color: #079fd7;
+}
+.developer-profile-btn {
+    background: #1ec8f3;
+    color: #071d49;
+}
+.developer-profile-btn:hover {
+    background: #ffffff;
+    color: #071d49;
+}
+@media (max-width: 576px) {
+    .developer-welcome { padding: 22px; border-radius: 16px; }
 }
