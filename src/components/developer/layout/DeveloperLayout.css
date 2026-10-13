@@ -15,3 +15,34 @@
 .developer-main .btn-primary:hover { background:#071d49; border-color:#071d49; }
 @media(max-width:900px) { .developer-main { padding:92px 20px 30px; } }
 @media(max-width:576px) { .developer-main { padding:84px 14px 25px; } .developer-main .container { padding-left:0; padding-right:0; } }
+
+
+/* Full-width panel layout aligned with the public StartupHub pages. */
+.developer-main {
+ width: 100%;
+ max-width: none;
+ padding: 92px 18px 30px;
+ box-sizing: border-box;
+}
+.developer-main > * {
+ width: 100%;
+ max-width: none;
+ margin-left: 0;
+ margin-right: 0;
+}
+.developer-main .container,
+.developer-main .container-sm,
+.developer-main .container-md,
+.developer-main .container-lg,
+.developer-main .container-xl,
+.developer-main .container-xxl,
+.developer-main .container-fluid {
+ width: 100%;
+ max-width: none;
+ padding-left: 0;
+ padding-right: 0;
+ margin-left: 0;
+ margin-right: 0;
+}
+@media(max-width:900px) { .developer-main { padding: 90px 16px 28px; } }
+@media(max-width:576px) { .developer-main { padding: 82px 12px 22px; } }

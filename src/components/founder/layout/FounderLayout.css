@@ -27,3 +27,38 @@
         padding: 84px 14px 25px;
     }
 }
+
+
+/* Full-width panel layout aligned with the public StartupHub pages. */
+.founder-main {
+    width: 100%;
+    max-width: none;
+    padding: 92px 18px 30px;
+    box-sizing: border-box;
+}
+.founder-main > * {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+.founder-main .container,
+.founder-main .container-sm,
+.founder-main .container-md,
+.founder-main .container-lg,
+.founder-main .container-xl,
+.founder-main .container-xxl,
+.founder-main .container-fluid {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+@media (max-width: 900px) {
+    .founder-main { padding: 90px 16px 28px; }
+}
+@media (max-width: 576px) {
+    .founder-main { padding: 82px 12px 22px; }
+}

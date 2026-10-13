@@ -13,7 +13,6 @@ import {
     FaRocket
 } from "react-icons/fa";
 
-import Breadcrumb from "../../shared/Breadcrumb";
 
 import AuthService from "../../../services/AuthService";
 import ProjectService from "../../../services/ProjectService";
@@ -162,11 +161,6 @@ export default function DeveloperDashboard() {
 
             <>
 
-                <Breadcrumb
-                    title="Developer Dashboard"
-                    page="Dashboard"
-                />
-
                 <div className="developer-loading">
 
                     <div className="developer-spinner"></div>
@@ -191,12 +185,6 @@ export default function DeveloperDashboard() {
     return (
 
         <>
-
-            <Breadcrumb
-                title="Developer Dashboard"
-                page="Dashboard"
-            />
-
 
             <div className="developer-dashboard">
 
