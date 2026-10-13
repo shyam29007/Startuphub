@@ -748,3 +748,43 @@
 @media (max-width: 576px) {
     .developer-welcome { padding: 22px; border-radius: 16px; }
 }
+
+/* Hide the shared upper breadcrumb/hero banner on the Developer dashboard only.
+   The :has() scope prevents these rules from affecting other Developer pages. */
+body:has(.developer-dashboard) .breadcrumb-banner,
+body:has(.developer-dashboard) .page-breadcrumb-banner,
+body:has(.developer-dashboard) .page-header-banner,
+body:has(.developer-dashboard) .page-hero,
+body:has(.developer-dashboard) .breadcrumb-hero,
+body:has(.developer-dashboard) .page-title-banner,
+body:has(.developer-dashboard) .inner-page-banner,
+body:has(.developer-dashboard) .breadcrumb-section,
+body:has(.developer-dashboard) .page-header,
+body:has(.developer-dashboard) .breadcrumb-header {
+    display: none !important;
+}
+
+/* Use the full available width for the dashboard content. */
+.developer-layout,
+.developer-main,
+.developer-main > *,
+.developer-dashboard {
+    width: 100%;
+    max-width: none;
+}
+
+.developer-main {
+    padding: 12px 16px 24px;
+    margin: 0;
+}
+
+.developer-dashboard {
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    .developer-main {
+        padding: 10px;
+    }
+}
